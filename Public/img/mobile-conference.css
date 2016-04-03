@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	font-family:Arial, Helvetica, sans-serif, "Adobe 黑体 Std R";
+	background:#373636;
+	color:#555;
+	margin:0;
+	padding:0;
+	border:0;
+	text-decoration:none;
+	}
+	
+.header{
+	background:url(images/mobile/header_bg.png) repeat-x;
+	height:auto;
+	width:auto;
+	margin: 3% 0 3% 0;
+	}
+	.header_logo, .header_title{
+		float:left;
+	}
+	.header_logo{
+	/* [disabled]background:url(imgs/yhy_logo.png) no-repeat; */
+	/* [disabled]width:21px; */
+	/* [disabled]height:21px; */
+	margin:0 2% 0 3%;
+	}
+	.header_title{
+	color:#999;
+	font-size:32px;
+	line-height:40px;
+	clear:right;
+	}
+.content{
+	padding:0 5%;
+	margin:0 auto;
+	background:#fbf9f7;
+	width:90%;
+	border-top:1px solid #555;
+}
+.height20px{
+	height:20px;
+	color:#fbf9f7;
+}
+.content_app{
+width:114px;
+height:114px;
+padding:0;
+	margin:8% auto 4% auto;
+border-radius:15px;
+-moz-border-radius:15px;
+-webkit-border-radius:15px;
+text-align: center;
+}
+.content_pic{background:url(images/mobile/logo-512.png);}
+.content_app_text{
+color:#555;
+text-align:center;
+font-size:38px;
+margin:5% auto 5% auto;
+}
+.content_error{
+color:#555;
+text-align:center;
+font-size:30px;
+margin:5% auto 10% auto;
+}
+.download{
+	width:100%;
+	/* [disabled]height:36px; */
+	margin:3% auto;
+	text-align: center;
+	}
+	.ios, .android{
+	width:124px;
+	height:36px;
+	border:0;
+	}
+	.ios{
+		float:left;
+	}
+	.android{
+		float:right;
+	}
+.text1{
+	font-size:32px;
+	color:#999;
+	margin:3% auto;
+}
+.text2{
+	font-size:24px;
+	color:#555;
+	margin:0 auto 5% auto;
+}
+.ad{
+	/* [disabled]background:url(imgs/ad.png) no-repeat; */
+	/* [disabled]height:158px; */
+	/* [disabled]width:172px; */
+	margin:20px auto;
+	text-align: center;
+	}
+.footer{
+	background:url(images/mobile/header_bg.png) repeat-x;
+	height:auto;
+	/* [disabled]position:relative; */
+	bottom:0;
+	padding: 4% auto 4% auto;
+	
+}
+	.copyright{
+	font-size:24px;
+	line-height:64px;
+	height:64px;
+	color:#999;
+	text-align:center;
+	}
+	
+.clear{clear:both;}	

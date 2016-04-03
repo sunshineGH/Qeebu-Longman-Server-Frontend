@@ -1,0 +1,334 @@
+<extend name="Public:base" />
+
+
+<block name="body">
+
+	<body class="user-information main">
+</block>
+<block name="main-con">
+	<div class="container-fluid">
+		<h1 class="page-heading">
+			乐宁教育
+			<small>智能教育管理系统</small>
+		</h1>
+		<ol class="breadcrumb default square rsaquo sm">
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home">
+					</i>
+				</a>
+			</li>
+			<li class="active">
+				用户管理
+			</li>
+		</ol>
+
+
+		<div class="the-box">
+			<div class="table-responsive">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="dataTables_filter" id="datatable-example_filter">
+							<label>
+								<form action="__URL__" method="get">
+									用户昵称:
+									<input type="text" name="search" aria-controls="datatable-example">
+									<input type="submit" value="search" />
+								</form>
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-3" style="margin-bottom: 6px; text-align: right">
+						<a href="{:U('Admin/User/create')}">
+							<button type="button" class="btn btn-success addUser">
+								添加学生
+							</button>
+						</a>
+						<input type="button" class="btn btn-primary" value="导入用户EXCEL" onclick="filebtn.click()">
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1">
+					</div>
+				</div>
+				<table class="user_info table table-bordered text-center course_info ">
+					<thead>
+						<tr>
+							<th style="width:60px">编号</th>
+							<th style="width:120px">用户账号</th>
+							<th>昵称</th>
+							<th style="width:60px">年龄</th>
+							<th style="width:120px">校区</th>
+							<th style="width:120px">水平</th>
+							<th style="width:80px">联系方式</th>
+							<th style="width:120px">续班</th>
+							<th style="width:120px">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					<foreach name="rs.data" item="vo">
+						<tr user_id='{$vo['uid']}'>
+							<th>{$vo['uid']}</th>
+							<td>{$vo['username']}</td>
+							<td>{$vo['nickname']}</td>
+							<td>{:age($vo['age'])}</td>
+							<td>{$vo['school']}</td>
+							<td>
+								<a class="level_detail" data-toggle="modal" href="#level-info">
+									查看详情
+								</a>
+							</td>
+							<td>
+								{$vo['tel']}
+							</td>
+							<td>
+								<if condition="$vo['continue_state']=='1'">
+									<a href="{:U('Admin/User/delete_continue_status',array('user_id'=>$vo['uid'],'page'=>$page))}">
+										<button class="btn btn-warning change_info">
+											取消续班
+										</button>
+									</a>
+								<else />
+									<a href="{:U('Admin/User/add_continue_status',array('user_id'=>$vo['uid'],'page'=>$page))}">
+										<button class="btn btn-danger change_info">
+											续班
+										</button>
+									</a>
+								</if>
+							</td>
+							<td>
+								<a href="{:U('Admin/User/edit',array('user_id'=>$vo['uid']))}">
+									<button class="btn btn-danger change_info">
+										编辑
+									</button>
+								</a>
+							</td>
+						</tr>
+					</foreach>
+					</tbody>
+				</table>
+				<div class="col-lg-6 col-lg-offset-6">
+					<ul class="pagination">
+						{$rs.show}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="modal fade" id="level-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						水平详情
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive">
+						<table class="course_info table table-bordered text-center">
+							<thead>
+							<tr class="active">
+								<th style="width:8%">
+									口语水平
+								</th>
+								<th style="width:10%">
+									语法水平
+								</th>
+								<th style="width:10%">
+									综合水平
+								</th>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									level-2
+								</td>
+								<td>
+									level-2
+								</td>
+								<td>
+									level-2
+								</td>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						关闭
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="user-log" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						学生记录
+					</h4>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#activity-log" aria-controls="home" role="tab" data-toggle="tab">
+								报名记录
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#case-log" aria-controls="profile" role="tab" data-toggle="tab">
+								特殊情况记录
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="activity-log">
+							<div class="table-responsive">
+								<table class="course_info table table-bordered text-center">
+									<thead>
+									<tr class="active">
+										<th style="width:10%">
+											学生姓名
+										</th>
+										<th style="width:10%">
+											活动编号
+										</th>
+										<th style="width:10%">
+											报名日期
+										</th>
+										<th style="width:10%">
+											是否成功
+										</th>
+									</thead>
+									<tbody>
+									<tr>
+										<td>
+											夏天
+										</td>
+										<td>
+											dhaodh
+										</td>
+										<td>
+											2014/08/09
+										</td>
+										<td>
+											是
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div role="tabpane2" class="tab-pane" id="case-log">
+							<div class="table-responsive">
+								<table class="course_info table table-bordered text-center">
+									<thead>
+									<tr class="active">
+										<th style="width:10%">
+											学生姓名
+										</th>
+										<th style="width:10%">
+											特殊情况
+										</th>
+										<th style="width:10%">
+											日期
+										</th>
+										<th style="width:10%">
+											备注
+										</th>
+									</thead>
+									<tbody>
+									<tr>
+										<td>
+											夏天
+										</td>
+										<td>
+											转班
+										</td>
+										<td>
+											2014/08/09
+										</td>
+										<td>
+											出国
+										</td>
+									</tr>
+									<tr>
+										<td>
+											夏天
+										</td>
+										<td>
+											退学
+										</td>
+										<td>
+											2014/08/09
+										</td>
+										<td>
+											出国
+										</td>
+									</tr>
+									<tr>
+										<td>
+											夏天
+										</td>
+										<td>
+											冻结
+										</td>
+										<td>
+											2014/08/09
+										</td>
+										<td>
+											出国
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						关闭
+					</button>
+				</div>
+			</div>
+		</div>
+</block>
+<block name="main-js">
+		<script>
+			$(function() {
+
+				$('.level_detail').click(function() {
+					var user_id = $(this).parents('tr').attr('user_id');
+					console.log('a');
+					$.ajax (
+					{
+						type:'get',
+						url:'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_user_level',
+						dataType:"jsonp",
+						jsonp:"jsoncallback",
+		                data : "id="+user_id,
+			            success  : function(data) {
+			            	console.log('success');
+			                $('#level-info .modal-body').find('td').eq(0).text(data[0].grammar_level);
+			                $('#level-info .modal-body').find('td').eq(1).text(data[0].speaking_level);
+			                $('#level-info .modal-body').find('td').eq(2).text(data[0].level_test);
+			            },
+			            error : function() {
+			                alert('fail');
+			            }
+					}
+					)
+				});
+			});
+		</script>
+</block>

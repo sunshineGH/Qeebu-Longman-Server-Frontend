@@ -1,0 +1,34 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="course_information main">
+</block>
+<block name="main-con">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程安排</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+			<div class="col-sm-offset-4 col-sm-4">
+				<div class="the-box warning" style="height:150px">
+					<p class="next">是否继续添加下一题？</p>
+					<div class="row isbutton">
+						<a href="{:U('Admin/Question/create',array('id'=>$exercise_id))}"><button class="btn btn-sucess">是</button></a>
+						<a href="{:U('Admin/Exercise/index')}"><button class="btn btn-danger btn-no">否</button></a>
+					</div>
+				</div><!-- /.the-box -->
+			</div>
+			</div><!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>
+

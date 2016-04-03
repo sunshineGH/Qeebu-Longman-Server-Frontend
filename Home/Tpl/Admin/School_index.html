@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name="body">
+
+	<body class="user-information main">
+</block>
+<block name="main-con">
+	<div class="container-fluid">
+		<h1 class="page-heading">
+			乐宁教育
+			<small>智能教育管理系统</small>
+		</h1>
+		<ol class="breadcrumb default square rsaquo sm">
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home">
+					</i>
+				</a>
+			</li>
+			<li class="active">
+				校区管理
+			</li>
+		</ol>
+
+
+		<div class="the-box">
+			<div class="table-responsive">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="dataTables_filter" id="datatable-example_filter">
+							<label>
+								<form action="__URL__" method="get">
+									用户昵称:
+									<input type="text" name="search" aria-controls="datatable-example">
+									<input type="submit" value="search" />
+								</form>
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-3" style="margin-bottom: 6px; text-align: right">
+						<a href="{:U('Admin/School/create')}">
+							<button type="button" class="btn btn-success addUser">
+								添加校区
+							</button>
+						</a>
+						<input type="button" class="btn btn-primary" value="导入用户EXCEL" onclick="filebtn.click()">
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1">
+					</div>
+				</div>
+				<table class="user_info table table-bordered text-center course_info ">
+					<thead>
+						<tr>
+							<th style="width:60px">编号</th>
+							<th style="width:120px">校区名</th>
+							<th style="width:120px">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					<foreach name="data" item="vo">
+						<tr user_id='{$vo['uid']}'>
+							<th>{$vo['id']}</th>
+							<td>{$vo['name']}</td>
+							<td>
+								<a href="{:U('Admin/School/edit',array('id'=>$vo['id']))}">
+									<button class="btn btn-danger change_info">
+										编辑
+									</button>
+								</a>
+								<a href="{:U('Admin/School/destroy',array('id'=>$vo['id']))}">
+									<button class="btn btn-danger change_info delete">
+										删除
+									</button>
+								</a>
+							</td>
+						</tr>
+					</foreach>
+					</tbody>
+				</table>
+				<div class="col-lg-6 col-lg-offset-6">
+					<ul class="pagination">
+						{$show}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</block>

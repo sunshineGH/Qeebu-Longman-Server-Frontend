@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="course_information main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item active selected">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item active selected"><a href="#">线下课程</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="#">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">选择题</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li class="active">课程信息</li>
+			</ol>
+					<!-- End breadcrumb -->	
+			<!-- BEGIN SiTE INFORMATIONS -->
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="the-box bg-success">
+						<h4>爱朗文幼儿英语2级</h4>
+						<p>教师：<a data-toggle="modal" href="#teacher-info">查看详情</a></p>
+						<p>班级编号：<a data-toggle="modal" href="#class-info">查看详情</a></p>
+						<p>教学目标：<a data-toggle="modal" href="#goal-info">查看详情</a></p>
+						<p>配套课程：爱朗文幼儿英语2级配套课程</p>
+						<p>查看当前上课人数：</p>
+						<div class="row"><div class="col-lg-4 col-lg-offset-2">
+							<a href="change_course-arrange.html"><button type="button" class="btn btn-primary">课程安排</button></a></div>
+							<a href="change_supp-course.html"><button type="button" class="btn btn-danger">编辑课程</button></a></div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box bg-primary">
+						<h4>爱朗文幼儿英语2级</h4>
+						<p>教师：<a data-toggle="modal" href="#teacher-info">查看详情</a></p>
+						<p>班级编号：<a data-toggle="modal" href="#class-info">查看详情</a></p>
+						<p>教学目标：<a data-toggle="modal" href="#goal-info">查看详情</a></p>
+						<p>配套课程：爱朗文幼儿英语2级配套课程</p>
+						<p>查看当前上课人数：</p>
+						<div class="row"><div class="col-lg-4 col-lg-offset-2">
+							<a href="change_course-arrange.html"><button type="button" class="btn btn-primary">课程安排</button></a></div>
+							<a href="change_supp-course.html"><button type="button" class="btn btn-danger">编辑课程</button></a></div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box bg-warning">
+						<h4>爱朗文幼儿英语2级</h4>
+						<p>教师：<a data-toggle="modal" href="#teacher-info">查看详情</a></p>
+						<p>班级编号：<a data-toggle="modal" href="#class-info">查看详情</a></p>
+						<p>教学目标：<a data-toggle="modal" href="#goal-info">查看详情</a></p>
+						<p>配套课程：爱朗文幼儿英语2级配套课程</p>
+						<p>查看当前上课人数：</p>
+						<div class="row"><div class="col-lg-4 col-lg-offset-2">
+							<a href="change_course-arrange.html"><button type="button" class="btn btn-primary">课程安排</button></a></div>
+							<a href="change_supp-course.html"><button type="button" class="btn btn-danger1">编辑课程</button></a></div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-lg-offset-8">
+						<a href="change_supp-course.html"><button type="button" class="btn btn-info addCourse">添加课程</button></a>
+						<input type="button" class="btn btn-primary addCourse" value="导入课程EXCEL" size="30" onclick="filebtn.click()"/>
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1" />
+					</div>
+					<div class="row">
+				<div class="col-lg-4 col-lg-offset-4">
+				<ul class="pagination">
+				  <li class="disabled"><a href="#fakelink">&laquo;</a></li>
+				  <li class="disabled"><a href="#fakelink">&lsaquo;</a></li>
+				  <li class="active"><a href="#fakelink">1</a></li>
+				  <li><a href="#fakelink">2</a></li>
+				  <li><a href="#fakelink">3</a></li>
+				  <li><a href="#fakelink">...</a></li>
+				  <li><a href="#fakelink">15</a></li>
+				  <li><a href="#fakelink">&rsaquo;</a></li>
+				  <li><a href="#fakelink">&raquo;</a></li>
+				</ul>
+				</div>
+			</div>
+				</div>			
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+		<div class="modal fade" id="teacher-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">教师详情</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">中教</th><th style="width:10%">外教</th>
+					 <th style="width:10%">班主任</th>
+					</thead>
+					<tbody>
+					 <tr><td>郭卉Holly</td><td>Chris</td><td>XXX</td>
+					</tbody>
+				 </table>
+				</div> 
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="class-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">爱朗文幼儿英语2级</h4>
+				<button class="btn btn-success">未结课</button>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">班级编号</th><th style="width:10%">中教</th><th style="width:10%">外教</th>
+					 <th style="width:10%">班主任</th>
+					 <th style="width:10%">上课地点</th><th style="width:10%">开课时间</th><th style="width:10%">结课时间</th>
+					</thead>
+					<tbody>
+					 <tr><td>LDADAHD313</td><td>郭卉Holly</td><td>Chris</td>
+					 <td>XXX</td><td>宝山校区</td>
+					 <td>8月1日</td><td>11月11日</td>
+					</tbody>
+				 </table>
+				</div> 
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="level-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">水平详情</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">口语水平</th><th style="width:10%">语法水平</th>
+					 <th style="width:10%">综合水平</th>
+					</thead>
+					<tbody>
+					 <tr><td>level-2</td><td>level-2</td><td>level-2</td>
+					</tbody>
+				 </table>
+				</div> 
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="goal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">教学目标</h4>
+			  </div>
+			  <div class="modal-body">
+				<p>教学目标教学目标教学目标教学目标</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+        <!-- END PAGE CONTENT -->		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');	
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;	
+					}		
+				});
+			});				
+		</script>
+	</body>
+</html>

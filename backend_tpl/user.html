@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="user-information main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item active selected">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item active selected"><a href="#">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="course_information.html">线下课程</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="#">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item  active selected"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">选择题</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li class="active">用户管理</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+					  <!-- Table -->
+					  <div class="table-responsive">
+					  <div class="row">
+						<div class="col-sm-6">
+							<div id="datatable_length" class="dataTables_length">
+								<label><select size="1" name="datatable-example_length" aria-controls="datatable-example"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>
+								每页显示的记录数</label>
+							</div>
+						</div>
+						<div class="col-sm-4 col-sm-offset-2">
+							<div class="dataTables_filter" id="datatable-example_filter"><label>姓名查找: <input type="text" aria-controls="datatable-example"></label></div>
+						</div>
+					  </div>
+					  <table class="user_info table table-bordered text-center course_info ">
+						<thead>
+						 <tr><th style="width:10%">用户账号</th><th style="width:8%">姓名</th><th style="width:8%">出生日期</th>
+						 <th style="width:5%">年龄</th>
+						 <th style="width:8%">入学日期</th><th style="width:10%">学习课程</th><th style="width:8%">班级编号</th>
+						 <th style="width:8%">水平</th>
+						 <th style="width:10%">联系方式</th><th style="width:8%">优惠券</th><th style="width:12%"></th></tr>
+						</thead>
+					    <tbody>
+						 <tr user_id='1'><td>爱幼儿</td><td>夏天</td><td>2008/08/09</td><td>7</td><td>2014/08/09</td>
+						 <td>爱朗文幼儿英语</td><td>DAUDHAUH78</td><td><a class="level_detail" data-toggle="modal" href="#level-info">查看详情</a></td><td>13456328965</td>
+						 <td>3</td>
+						 <td><a data-toggle="modal" href="#user-log"><button class="btn btn-primary has-margin act_num">查看记录</button></a>
+						 <a href="change_user.html"><button class="btn btn-danger change_info">编辑/删除</button></a></td></tr>
+						 <tr><th style="width:10%">用户账号</th><th style="width:8%">姓名</th><th style="width:8%">出生日期</th>
+						 <th style="width:5%">年龄</th>
+						 <th style="width:8%">入学日期</th><th style="width:10%">学习课程</th><th style="width:8%">班级编号</th>
+						 <th style="width:8%">水平</th>
+						 <th style="width:10%">联系方式</th><th style="width:8%">优惠券</th><th style="width:12%"></th></tr>
+						</thead>
+					    <tbody>
+						 <tr user_id='2'><td>爱幼儿</td><td>夏天</td><td>2008/08/09</td><td>7</td><td>2014/08/09</td>
+						 <td>爱朗文幼儿英语</td><td>DAUDHAUH78</td><td><a class="level_detail" data-toggle="modal" href="#level-info">查看详情</a></td><td>13456328965</td>
+						 <td>3</td>
+						 <td><a data-toggle="modal" href="#user-log"><button class="btn btn-primary has-margin act_num">查看记录</button></a>
+						 <a href="change_user.html"><button class="btn btn-danger change_info">编辑/删除</button></a></td></tr>
+					    </tbody>
+					 </table>
+					 <div class="row">
+					<div class="col-lg-3 col-lg-offset-9">
+						<a href="change_user.html"><button type="button" class="btn btn-success addUser">添加用户</button></a>
+						<input type="button" class="btn btn-primary" value="导入用户EXCEL" size="30" onclick="filebtn.click()">
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1">
+					</div>
+					</div>
+					 <div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  <li class="disabled"><a href="#fakelink">&laquo;</a></li>
+						  <li class="disabled"><a href="#fakelink">&lsaquo;</a></li>
+						  <li class="active"><a href="#fakelink">1</a></li>
+						  <li><a href="#fakelink">2</a></li>
+						  <li><a href="#fakelink">3</a></li>
+						  <li><a href="#fakelink">...</a></li>
+						  <li><a href="#fakelink">15</a></li>
+						  <li><a href="#fakelink">&rsaquo;</a></li>
+						  <li><a href="#fakelink">&raquo;</a></li>
+						</ul>
+					</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+
+		  <!-- END CONTAINER FLUID -->
+        <!-- END PAGE CONTENT -->
+		<div class="modal fade" id="level-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">水平详情</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">口语水平</th><th style="width:10%">语法水平</th>
+					 <th style="width:10%">综合水平</th>
+					</thead>
+					<tbody>
+					 <tr><td>level-2</td><td>level-2</td><td>level-2</td>
+					</tbody>
+				 </table>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="user-log" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">学生记录</h4>
+			  </div>
+			  <div class="modal-body">
+			   <ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#activity-log" aria-controls="home" role="tab" data-toggle="tab">报名记录</a></li>
+				<li role="presentation"><a href="#case-log" aria-controls="profile" role="tab" data-toggle="tab">特殊情况记录</a></li>
+			   </ul>
+			    <div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="activity-log">
+					<div class="table-responsive">
+					  <table class="course_info table table-bordered text-center">
+						<thead>
+						 <tr class="active"><th style="width:10%">学生姓名</th><th style="width:10%">活动编号</th>
+						 <th style="width:10%">报名日期</th><th style="width:10%">是否成功</th>
+						</thead>
+						<tbody>
+						 <tr><td>夏天</td><td>dhaodh</td><td>2014/08/09</td><td>是</td></tr>
+						</tbody>
+					 </table>
+					</div>
+				</div>
+				<div role="tabpane2" class="tab-pane" id="case-log">
+					<div class="table-responsive">
+					  <table class="course_info table table-bordered text-center">
+						<thead>
+						 <tr class="active"><th style="width:10%">学生姓名</th><th style="width:10%">特殊情况</th>
+						 <th style="width:10%">日期</th><th style="width:10%">备注</th>
+						</thead>
+						<tbody>
+						 <tr><td>夏天</td><td>转班</td><td>2014/08/09</td><td>出国</td></tr>
+						 <tr><td>夏天</td><td>退学</td><td>2014/08/09</td><td>出国</td></tr>
+						 <tr><td>夏天</td><td>冻结</td><td>2014/08/09</td><td>出国</td></tr>
+						</tbody>
+					 </table>
+					</div>
+				</div>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;
+					}
+				});
+
+				$('.level_detail').click(function() {
+					var user_id = $(this).parents('tr').attr('user_id');
+					$.ajax (
+					{
+						type:'get',
+						url:'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_user_level',
+						dataType:"jsonp",
+						jsonp:"jsoncallback",
+		                data : "id="+user_id,
+			            success  : function(data) {
+			                $('#level-info .modal-body').find('td').eq(0).text(data[0].grammar_level);
+			                $('#level-info .modal-body').find('td').eq(1).text(data[0].speaking_level);
+			                $('#level-info .modal-body').find('td').eq(2).text(data[0].level_test);
+			            },
+			            error : function() {
+			                alert('fail');
+			            }
+					}
+					)
+				});
+			});
+		</script>
+	</body>
+</html>

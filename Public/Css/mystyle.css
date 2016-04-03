@@ -1,0 +1,247 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body{ 	
+	text-align:center;
+	background-color:white;
+	font-family:"华文细黑";
+	font-weight:bold
+	} 
+
+div{
+	position:relative;
+	margin:0 auto;
+	width:100%; 
+	}
+
+p{ 
+	font-size:45px;
+	color:#535353;
+	}
+	
+.greeting{
+	background-color:#EDFFFF;
+	padding:30px;
+	text-align:left;
+	line-height:150%;
+	border:2px;
+	border-color:silver;
+	border-style: none; 
+	border-bottom-style: solid;
+	}
+	
+.title{
+	padding-top:160px
+	}
+	
+.title3{
+	padding-top:150px
+	}
+	
+.div-top{ 
+	height:120px;
+	}
+	
+.div-title1{  
+	height:300px; 
+	}
+	
+.div-form{
+	height:auto;
+	margin-top:100px;
+	margin-bottom:200px
+	}
+	
+.div-inlineform{
+	width:85%;
+	height:120px;
+	margin-top:150px
+	}
+	
+.div-textbox, .button-red{
+	width:45%;
+	height:100px;
+	float:left;
+	}	
+
+.textdiv{
+	width:85%;
+	height:150px;
+	border:3px;
+	border-color:#C8C8C8;
+	border-style:none; 
+	border-bottom-style:solid
+	}
+
+.icon{
+	height:55px;
+	float:left;
+	padding-left:25px;
+	padding-right:10px;
+	margin-top:80px;
+	}
+	
+.textarea{
+	width:60%;
+	border-style: none; 
+	font-size:40px;
+	float:left;
+	color:#C8C8C8;
+	margin-top:75px;
+	font-family:"华文细黑";
+	}
+	
+.textbox{
+	width:100%;
+	font-size:40px;
+	color:#B4B2B3;
+	border-color:#A0A0A0;
+	background-color:#C0F9FA;
+	border:solid;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:30px;
+	font-family:"华文细黑";
+	}
+
+.button-long{
+	width:85%;
+	height:100px;
+	margin-top:70px;
+	background:url(../Images/pic/button-long.gif);
+	background-repeat: no-repeat; 
+	filter:progid:dximagetransform.microsoft.alphaimageloader(sizingmethod='scale');
+	-moz-background-size:100% 100%;  
+    background-size:100% 100%; 	
+	}
+
+.button-short, .button-blue{
+	width:45%;
+	height:100px;
+	float:right;
+	background:url(../Images/pic/button-short.gif);
+	background-repeat: no-repeat; 
+	filter:progid:dximagetransform.microsoft.alphaimageloader(sizingmethod='scale');
+	-moz-background-size:100% 100%;  
+    	background-size:100% 100%; 	
+	}
+	
+.checkboxdiv{
+	width:85%;
+	height:200px
+	}
+	
+.checkbox {
+	float:left;
+  	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	margin-top:70px;
+	margin-left:5px;
+	content:url(../Images/pic/blank-box.gif);
+	background-size:100% 100%; 
+	width:7%;
+	border: none;  
+}
+
+.checkbox:checked {
+  content:url(../Images/pic/ticked-box.gif);
+}
+
+.agreement{
+	float:left;
+	width:35%;
+	margin-top:80px;
+	margin-left:30px;
+	}
+	
+.agreement_tick, .agreement_link{
+	float:left;
+}
+
+.agreement_tick{
+	width:49%;
+}
+
+.agreement_link{
+	width:51%;
+}	
+
+#p2{
+	background-image:url(../Images/pic/page2-background.gif);
+	background-repeat: no-repeat; 
+	filter:progid:dximagetransform.microsoft.alphaimageloader(sizingmethod='scale');
+	-moz-background-size:100% 100%;  
+    	background-size:100% 100%; 	
+	}
+	
+.page{
+	height:1200px
+	}
+	
+.img-text{
+	color:white;
+	line-height:100px;
+	vertical-align:middle
+	}
+	
+.link{
+	text-decoration:none
+	}
+
+.icon_top{
+	width:100%;
+	margin-top:80px;
+	margin-bottom:70px;
+}
+
+.prompt{
+	width:94%;
+}
+
+.prompt p{
+	line-height:150%;
+}
+	
+.two_shortbutton_div{
+	margin-top:250px;
+	width:85%;
+}
+
+.button-red{
+	width:50%;
+	margin-left:-30px;
+	background:url(../Images/pic/button-red.gif);
+	background-repeat: no-repeat;   
+    background-size:100% 100%; 	
+}
+
+.button-blue{
+	width:50%;
+	margin-right:-30px;
+}
+
+.background{
+	background-color:#DEFFFF;
+}
+	
+.teamIn_download{
+	margin-top:200px;
+	width:93%;
+	height:300px;
+}
+
+.teamIn_download p{
+	font-size:36px;
+}
+
+.teamIn_download a{
+	color:#0092EF;
+	font-size:32px;
+	hight:100%;
+	line-height:120%;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+	

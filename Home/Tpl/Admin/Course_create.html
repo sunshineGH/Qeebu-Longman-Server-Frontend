@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程信息</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Course/store')}" class="form-horizontal">
+					<legend>课程信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程名称</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="name" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">口语水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="speaker_level">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">语法水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="grammar_level">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">综合水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="level">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">配套课程</label>
+						<div class="col-lg-3">
+							<select class="form-control" name="support_id" >
+								<option value="0">无</option>
+							<foreach name="data" item="vo">
+								<option value="{$vo['id']}">{$vo['name']}</option>
+							</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">教学目标</label>
+						<div class="col-lg-5">
+							<textarea rows="3" class="form-control" name="desc" /></textarea>
+						</div>
+					</div>
+
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+
+</block>
+

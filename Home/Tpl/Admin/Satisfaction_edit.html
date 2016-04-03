@@ -1,0 +1,75 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li>用户管理</li>
+				<li class="active">用户编辑</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+					<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Satisfaction/update')}" class="form-horizontal">
+				<fieldset class="xianxia">
+					<legend>资料频道添加</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">主题名称</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="name" value="{$data['name']}"/>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">类型</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="type">
+								<option value="1" {$data['type']==1?'selected':''}>普通</option>
+								<option value="2" {$data['type']==2?'selected':''}>语音</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">结束时间</label>
+						<div class="col-lg-5">
+							<input id="wdate" onClick="WdatePicker()" type="text" value="{:date('Y-m-d',$data['end_time'])}" class="form-control" name="end_time" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">描述</label>
+						<div class="col-lg-5">
+							<textarea name="desc" id="" cols="70" rows="10">{$data['desc']}</textarea>
+						</div>
+					</div>
+
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-4 col-lg-offset-4">
+						<input type="text" class="form-control" name="id" value="{$data['id']}" style="display:none"/>
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+
+		  <!-- END CONTAINER FLUID -->
+        <!-- END PAGE CONTENT -->
+</block>
+<block name="main-js">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+</block>

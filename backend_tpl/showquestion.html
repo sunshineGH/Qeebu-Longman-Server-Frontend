@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="course_information main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item" display="none">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu">
+						<li class="list-group-item"><a href="course_information.html">课程信息</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="#">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item active selected"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">听力练习</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected active">
+					<a href="Qesindex.html">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						套题管理
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">套题管理</a></li>
+				<li class="active">习题添加</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="" class="form-horizontal">
+				<fieldset >
+					<legend>习题类型</legend>
+					<div class="col-lg-4 col-lg-offset-4">
+						<button type="button" class="btn btn-success active chooseBtn" style="margin-right:40px">选择题</button>
+						<button type="button" class="btn btn-success displayBtn">显示题</button>
+					</div>
+				</fieldset>
+
+				<fieldset class="displaykind">
+					<legend>习题内容</legend>
+					<div class="col-lg-9">
+					<div class="form-group">
+						<label class="col-lg-4 control-label">文字内容</label>
+						<div class="col-lg-7">
+							<textarea rows="3" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">图片内容</label>
+						<div class="col-lg-5">
+							<input type="file" multiple/>(可多选，图片格式为jpg,png)
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">语音内容</label>
+						<div class="col-lg-5">
+							<input type="file">(只可单选，语音格式为MP3,MP4)
+						</div>
+					</div>
+					</div>
+					<div class="col-lg-3">
+						<img src="images/logo-login1.jpg">
+					</div>
+				</fieldset>
+
+				<div class="form-group">
+					<div class="col-lg-3 col-lg-offset-4">
+						<button type="submit" class="btn btn-primary submit">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+        <!-- END PAGE CONTENT -->
+
+	</body>
+</html>

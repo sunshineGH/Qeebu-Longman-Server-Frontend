@@ -1,0 +1,180 @@
+/* CSS Document */
+
+/********************************      Basic Structure      ********************************/
+
+html {
+                font-size: 100%;
+                height: 100%;
+                margin-bottom: 1px; /* Always show a scrollbar to avoid jumping when the scrollbar appears  */
+                }
+
+body {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #555;
+                /*background: #f0f0f0;*/
+                font-size: 12px;
+                }              
+
+/********************************      Elements styling      ********************************/
+
+h1, h2, h3, h4, h5, h6 {
+                font-family: Helvetica, Arial, sans-serif;
+                color: #222;
+                font-weight: bold;
+                }
+
+h1            { font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 31px; font-weight: bold; color: #fff; 
+				  position: absolute; top: -1000px;  /* Remove this line and delete the logo (in the HTML) if you don't want an image as a logo */
+				}
+				
+h2            { font-size: 26px; padding: 0 0 10px 0; }
+h3            { font-size: 17px; padding: 0 0 10px 0; }
+h4            { font-size: 16px; padding: 0 0 5px 0; }
+h5            { font-size: 14px; padding: 0 0 5px 0; }
+h6            { font-size: 12px; padding: 0 0 5px 0; }
+
+
+a              { color: #57a000; text-decoration: none; }
+a:hover     { color: #000; }
+a:active     { color: #777; }
+a:focus     { outline: 1px; }
+
+strong       { font-weight: bold; color: #333; }
+
+small   		{ font-size: 0.85em; }
+
+pre           { font-family: monospace; }
+
+p {
+                padding: 5px 0 10px 0;
+                line-height: 1.6em;
+                }
+
+/********************************      General Classes      ********************************/
+
+.clear {
+                clear: both;
+                }
+				
+.align-left {
+                float: left;
+                }
+				
+.align-right {
+                float: right;
+                }
+
+/************ Button ************/
+.button {
+				font-family: Verdana, Arial, sans-serif;
+                display: inline-block;
+                background: #459300 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border: 1px solid #459300 !important;
+                padding: 4px 7px 4px 7px !important;
+                color: #fff !important;
+                cursor: pointer;
+                }
+                
+.button:hover {
+                text-decoration: underline;
+                }
+                
+.button:active {
+                padding: 5px 7px 3px 7px !important;
+                }
+				
+a.remove-link {
+				color: #bb0000;
+				}
+
+a.remove-link:hover {
+				color: #000;
+				}
+table{border-collapse: collapse;}
+			
+/************ nav ************/
+.nav_blue{
+	color:#FFFFFF;
+	font-family:"微软雅黑";
+	font-size:14px;
+	text-align:center;
+	line-height:40px;
+	width:298px;
+	height:40px;
+	background:url('../Images/a/nav_blue.jpg') left top repeat-x;
+}
+.nav_grey{
+	color:#747474;
+	font-family:"微软雅黑";
+	font-size:14px;
+	text-align:center;
+	line-height:40px;
+	width:298px;
+	height:40px;
+	background:url('../Images/a/nav_grey.jpg') left top repeat-x;
+}
+.nav_blue_grey{
+	width:44px;
+	height:40px;
+	background:url('../Images/a/nav_blue_grey.jpg') left top repeat-x;	
+}
+.nav_grey_blue{
+	width:43px;
+	height:40px;
+	background:url('../Images/a/nav_grey_blue.jpg') left top repeat-x;	
+}
+.nav_grey_grey{
+	width:44px;
+	height:40px;
+	background:url('../Images/a/nav_grey_grey.jpg') left top repeat-x;	
+}
+.col_title{
+	width:25%;
+	height:40px;
+	line-height:60px;
+	font-size:16px;
+	font-family:"微软雅黑";
+	font-weight:550;
+}
+.hb_title{
+	width:18%;
+	font-size:13px;
+	font-family:"微软雅黑";
+	font-weight:550;
+	text-align:center;
+	margin-left:10px;
+}
+.col_input{
+	padding: 6px;
+	font-size: 13px;
+	height:22px;
+	background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+	border: 1px solid #d5d5d5;
+	color: #333;
+	width:40%;
+	border-radius:5px;
+}
+.hb_input{
+	padding: 6px;
+	font-size: 13px;
+	height:22px;
+	background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+	border: 1px solid #d5d5d5;
+	color: #333;
+	width:70%;
+	border-radius:5px;
+}
+textarea,select{
+                padding: 6px;
+                font-size: 13px;
+                background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+                border: 1px solid #d5d5d5;
+				color: #333;
+				border-radius:5px;
+                }
+.submit_button{
+	width:110px;
+	text-align:center;
+	line-height:40px;
+	font-size:24px;
+}

@@ -1,0 +1,135 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li>用户管理</li>
+				<li class="active">用户编辑</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+					<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/User/store')}" class="form-horizontal">
+				<fieldset class="xianxia">
+					<legend>用户信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">用户账号</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="username" required="required"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">用户密码</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="password" required="required"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">确认密码</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="repassword" required="required"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">学生姓名</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="nickname" required="required"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">家长姓名</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="parents_name" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">出生日期</label>
+						<div class="col-lg-5">
+							<input id="wdate" type="text" class="form-control"  onClick="WdatePicker()" name="birthday" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">校区</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="school_address_id">
+							<foreach name="school" item="vo">
+								<option value="{$vo['id']}">{$vo['name']}</option>
+							</foreach>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">口语水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="speaking_level">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+								<option value="3">level 3</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">语法水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="grammar_level">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+								<option value="3">level 3</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">综合水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="level_test">
+								<option value="1">level 1</option>
+								<option value="2">level 2</option>
+								<option value="3">level 3</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">入学方式</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="coming_style">
+								<option value="1">正常入学</option>
+								<option value="2">插班入学</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">联系方式</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="tel" required="required"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">优惠券</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="" />
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-4 col-lg-offset-4">
+						<input type="text" class="form-control" name="role" value="1" style="display:none"/>
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+</block>
+

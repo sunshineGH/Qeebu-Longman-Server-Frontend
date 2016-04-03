@@ -1,0 +1,129 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="course_information main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课后练习管理</a></li>
+				<li class="active">flash card</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/SatisfactionQuestion/store')}" class="form-horizontal" enctype="multipart/form-data">
+				<fieldset>
+					<legend>习题内容</legend>
+					<div class="col-lg-9">
+					<div class="form-group">
+						<label class="col-lg-4 control-label">标题</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="title" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">问题</label>
+						<div class="col-lg-5">
+							<textarea name="detail" id="" cols="50" rows="10"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">上传图片及音频</label>
+						<div class="col-lg-5">
+							<input type="file" name="enclosure[]" multiple="true" />(上传图片及音频,支持格式jpg,png,MP3,MP4)
+						</div>
+					</div>
+					</div>
+					<div class="col-lg-3">
+						<img src="__PUBLIC__/Images/logo-login1.jpg">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>习题选项</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">选项类型</label>
+						<div class="col-lg-3">
+							<select class="form-control" name="type" id="selectFlag">
+								<option value="1">文字</option>
+								<option value="2">图片</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">A</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="A[]" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">B</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="B[]" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">C</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="C[]" />
+						</div>
+						<div class="col-lg-4 checkbox">
+							<label><input type="checkbox" class="checkCD"/>无</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">D</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="D[]" />
+						</div>
+						<div class="col-lg-4 checkbox">
+							<label><input type="checkbox" class="checkCD"/>无</label>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<input type="text" class="form-control" name="topic_id" style="display:none" value="{$topic_id}"/>
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>
+<block name="main-js">
+		<script>
+			$(function() {
+				$("#selectFlag").click(function(){
+					if($("#selectFlag").val() == "2"){
+						$("input[name='A[]']").attr('type','file');
+						$("input[name='B[]']").attr('type','file');
+						$("input[name='C[]']").attr('type','file');
+						$("input[name='D[]']").attr('type','file');
+						$(".selectOption input").removeClass('form-control');
+					}else{
+						$("input[name='A[]']").attr('type','text');
+						$("input[name='B[]']").attr('type','text');
+						$("input[name='C[]']").attr('type','text');
+						$("input[name='D[]']").attr('type','text');
+						$(".selectOption input").addClass('form-control');
+					}
+				});
+				$('.checkCD').click(function() {
+					if($(this).is(':checked')) {
+						$(this).parent().parent().prev().children().attr('disabled','true');
+					}else {
+						$(this).parent().parent().prev().children().removeAttr('disabled');
+					}
+				});
+			});
+		</script>
+</block>

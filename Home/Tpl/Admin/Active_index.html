@@ -1,0 +1,74 @@
+<extend name="Public:base" />
+<block name="body">
+<body class="user-information main">
+</block>
+<block name="main-con">
+  <div class="container-fluid">
+	<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li class="active">活动新闻管理</li>
+	</ol>
+	<div class="the-box">
+			  <div class="table-responsive">
+			  <div class="row">
+					<div class="col-sm-9">
+						<div class="dataTables_filter" id="datatable-example_filter">
+							<label>
+								<form action="__URL__" method="get">
+									活动名称:
+									<input type="text" name="search" aria-controls="datatable-example">
+									<input type="submit" value="search" />
+								</form>
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-3" style="text-align: right; margin-bottom: 6px;">
+						<a href="{:U('Admin/Active/create')}">
+							<button type="button" class="btn btn-success addUser">添加活动</button>
+						</a>
+					</div>
+			  </div>
+			  <table class="user_info table table-bordered text-center course_info ">
+				<thead>
+					<tr>
+						<th>活动标题</th>
+						<th style="width: 80px">类型</th>
+						<th style="width:130px">报名截止时间</th>
+						<th style="width: 60px">价格</th>
+						<th style="width:120px">校区</th>
+						<th style="width: 80px">人数上限</th>
+						<th style="width: 80px">报名人数</th>
+						<th style="width:136px">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				<foreach name="data" item="vo">
+				 <tr>
+					 <td>{$vo['title']}</td>
+					 <td>{$vo['category']}</td>
+					 <td>{$vo['reg_time_end']}</td>
+					 <td>{$vo['price']}</td>
+					 <td>{$vo['school']}</td>
+					 <td>{$vo['max_num']}</td>
+					 <td>{$vo['apply_num']}</td>
+					 <td>
+						 <a data-toggle="modal" href="{:U('Admin/Active/apple_info',array('id'=>$vo['id']))}">
+							 <button class="btn btn-success has-margin act_num">报名详情</button>
+						 </a>
+						 <a data-toggle="modal" href="{:U('Admin/Active/edit',array('id'=>$vo['id']))}">
+							 <button class="btn btn-primary has-margin act_num">编辑</button>
+						 </a>
+						 <a href="{:U('Admin/Active/destroy',array('id'=>$vo['id']))}">
+							 <button class="btn btn-danger change_info delete">删除</button>
+						 </a>
+					 </td>
+				 </tr>
+				 </foreach>
+				</tbody>
+			 </table>
+			 <div class="col-lg-4 col-lg-offset-4"><ul class="pagination">{$show}</ul></div>
+			</div>
+		</div>
+	</div>
+</block>

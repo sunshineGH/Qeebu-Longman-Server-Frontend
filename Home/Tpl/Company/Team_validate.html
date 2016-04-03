@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>TeamIn</title><style>
+body{ 
+	text-align:center;
+} 
+@media screen{
+        .div{ 
+			margin:0 auto; 
+			width:100%; 
+			height:100%; 
+		} 
+		a:link{
+			text-decoration:none ;
+			} 
+		a:visited { 
+			text-decoration:none ;
+			} 
+		a:hover { 
+			text-decoration:none ;
+			} 
+		a:active {
+			text-decoration:none ; 
+			} 
+	}
+
+</style> 
+
+</head> 
+<body id="{$data.k}" onload="javascript:time(document.getElementById('btn'))">
+	<div class="div"> 
+
+		<div style="background-color:#C1F9FA;width:100%;height:20%;float:left;padding-top:10%;">
+			<img style="width:25%;" src="__PUBLIC__/Images/team/log_3.jpg" alt="" />
+			<img style="width:100%;" src="__PUBLIC__/Images/team/log_7.jpg" alt="" />
+		</div>
+        
+        <div style="width:100%;height:20%;padding-top:30%">
+			<div style="width:90%">
+				<div style="float:left;width:50%;">
+                	<input type="hidden" name="tel" value="{$data.tel}" />
+                    <input type="text" name="verify" style="padding:2% 0;font-size:large;width:85%;border:2px solid #D2D2D2;margin-left:20%" placeholder="请输入验证码" />
+				</div>
+					
+				<div style="float:right;width:50%;">
+					<button id="btn" value="" style="width:90%;padding:4% 0;margin-left:13%;border:2px solid #05CCCD;background-color:#05CCCD;color:white; border-radius:4px;  -webkit-border-radius: 4px;" />免费获取验证码</button>
+				</div>
+			</div>
+		</div>
+		<div style="height:30%;margin-top:20%">
+            <img style="width:85%;" src="__PUBLIC__/Images/team/makesure.png" onclick="check_verify()" />
+        </div>
+
+		
+		
+	</div> 
+</body> 
+</html> 
+<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/teamin/Public/Js/alert.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.mobile-1.4.2.js"></script>
+<script>
+var wait=60;
+function time(o) {
+	if (wait == 0) {
+		o.removeAttribute("disabled");            
+		o.innerHTML="免费获取验证码";
+		wait = 60;
+	} else {
+		o.setAttribute("disabled", true);
+		if(wait<10)
+			wait = '0'+wait;	
+		o.innerHTML ="重 新 发 送(" + wait + ")";
+		wait--;
+		setTimeout(function() {
+			time(o)
+		},
+		1000)
+	}
+}
+
+document.getElementById("btn").onclick=function(){ 
+	get_verify('no');
+	time(this);
+}
+</script>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="assets/img/avatar/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu"  display="none">
+						<li class="list-group-item"><a href="course_information.html">课程信息</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="#">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item  selected">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item  active selected"><a href="#">语法练习</a></li>
+						<li class="list-group-item"><a href="#">听力练习</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课后练习管理</a></li>
+				<li class="active">语法练习</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+				<div class="col-lg-12">
+					  <!-- Table -->
+					  <div class="table-responsive">
+					  <table class="course_info table table-bordered text-center">
+						<thead>
+						 <tr><th style="width:25%">套题名称</th><th style="width:25%">数量</th><th style="width:25%">添加时间</th><th></th></tr>
+					    </thead>
+					    <tbody>
+						 <tr exercises_id="3"><td>爱朗文幼儿英语2级</td><td>15</td><td>2015.8.26</td>
+						 <td>
+						 <button class="btn btn-success stu_num" data-toggle="modal" data-target="#change_grammar">修改</button>
+						 <button class="btn btn-danger delete">删除</button></td></tr>
+						 <tr exercises_id="4"><td>爱朗文幼儿英语2级</td><td>15</td><td>2015.8.26</td>
+						 <td>
+						 <button class="btn btn-success stu_num" data-toggle="modal" data-target="#change_grammar">修改</button>
+						 <button class="btn btn-danger delete">删除</button></td></tr>
+					    </tbody>
+					 </table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-10">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#add_queSet">添加套题</button>
+				</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+		<div class="modal fade" id="change_grammar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">套题修改</h4>
+			  </div>
+			  <div class="modal-body">
+				<!-- <a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第1题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第2题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第3题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第4题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第5题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第6题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第7题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第8题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第9题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第10题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第11题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第12题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第13题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第14题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square">第15题</button></a> -->
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="add_queSet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">套题添加</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th>套题名称</th>
+					</thead>
+					<tbody>
+					 <tr><td><input type="text" value="编辑套题名称" class="setName"/></td></tr>
+					</tbody>
+				 </table>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="submit" class="btn btn-default" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+        <!-- END PAGE CONTENT -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;
+					}
+				});
+				$('.delete').click(function(){
+					$(this).parent().parent().remove();
+				});
+			});
+
+		</script>
+		<script type="text/javascript">
+		$(function(){
+			$('.stu_num').click(function() {
+				var exercises_id = $(this).parents('tr').attr('exercises_id');
+				$('#change_grammar .modal-body').empty();
+				$.ajax(
+		        {
+		            type:'get',
+		            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_question',
+		            dataType : 'jsonp',
+		            jsonp:"jsoncallback",
+		            data : "id="+exercises_id,
+		            success  : function(data) {
+		                console.log(data);
+						for(var i = 0; i < data.length; i++) {
+							console.log(data[i].title);
+							$('#change_grammar .modal-body').append('<a href="flash_card.html"><button type="button" class="btn btn-danger btn-grammar btn-square"></button></a>');
+						}
+						for(var i=0;i<data.length;i++) {
+							$('#change_grammar .modal-body a').eq(i).attr('href','flash_card.html' + '/id=' + data[i].id); 
+							$('.btn-grammar').eq(i).text(data[i].title);
+						}
+		            },
+		            error : function() {
+		                alert('fail');
+		            }
+		        }
+				)
+			});
+		   
+		})
+		</script>
+	</body>
+</html>

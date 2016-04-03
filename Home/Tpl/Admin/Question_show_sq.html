@@ -1,0 +1,60 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="course_information main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课后练习管理</a></li>
+				<li class="active">flash card</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form class="form-horizontal">
+				<fieldset>
+					<legend>习题内容</legend>
+					<div class="col-lg-9">
+					<div class="form-group">
+						<label class="col-lg-4 control-label">标题</label>
+						<div class="col-lg-5">
+							<p class="display">{$data['title']}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">问题</label>
+						<div class="col-lg-5">
+							<p class="display">{$data['detail']}</p>
+						</div>
+					</div>
+					<foreach name="question_images" item="vo">
+					<div class="form-group">
+						<label class="col-lg-4 control-label">附件</label>
+						<div class="col-lg-5">
+							<p class="display">{$vo['file']}</p>
+						</div>
+					</div>
+					</foreach>
+					</div>
+					<div class="col-lg-3">
+						<img src="__PUBLIC__/Images/logo-login1.jpg">
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<a href="{:U('Admin/Question/destroy',array('id'=>$question_id))}" class="btn btn-danger btn-primary">删除</a>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>

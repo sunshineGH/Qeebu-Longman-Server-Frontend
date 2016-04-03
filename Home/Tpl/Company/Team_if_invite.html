@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<meta charset="usf-8"/>
+    <title>TeamIn</title><link rel="stylesheet" href="__PUBLIC__/Css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet"  href="__PUBLIC__/Css/mystyle.css" type="text/css"/>
+</head>
+
+<body class="background" id="<php>echo $_GET['k']</php>">
+<div>
+	<img class="icon_top" src="__PUBLIC__/Images/pic/cup.gif"/>
+</div>
+
+<div class="prompt">
+	<p><span id="inviter"></span>邀请您加入<br/>【<span id="teamname"></span>】</p>
+</div>
+
+<div class="two_shortbutton_div">
+    <div class="button-red">
+        <a class="link" href="teamin.html?reject">
+            <p class="img-text" >拒绝</p>
+        </a>
+    </div>	
+    <div class="button-blue">
+        <a class="link" href="teamin.html?agree">
+            <p class="img-text" >同意</p>
+        </a>
+    </div>
+</div>
+<script>
+var teamname = "Team IN";
+var inviter = "{$data.team_name}";
+document.getElementById("teamname").innerHTML = teamname;
+document.getElementById("inviter").innerHTML = inviter+" ";
+</script> 
+</body>  
+</html>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/alert.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.mobile-1.4.2.js"></script>
+    
+ 
+
+

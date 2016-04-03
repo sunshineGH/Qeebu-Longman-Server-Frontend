@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<style>
+			.class-info {
+				 <!-- border-color:#656D78; --> 
+				 border-color:#F7F7F7;
+				box-shadow:0 1px 2px rgba(0,0,0,.3);
+			}
+		</style>
+	</head>
+	<body class="main class-information">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu">
+						<li class="list-group-item"><a href="course_information.html">线下课程</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item active selected">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item selected"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="class-detail.html">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">选择题</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">班级教学</a></li>
+				<li class="active">班级信息</li>
+			</ol>
+					<!-- End breadcrumb -->	
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<div class="row">
+					<div class="col-sm-8"><h3>班级信息</h3></div>
+					<div class="col-sm-4"><div class="dataTables_filter" id="datatable-example_filter">
+						<label>班级编号查找：<input type="text" aria-controls="course-1"></label>
+					</div></div>	
+				</div>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#course-1" aria-controls="home" role="tab" data-toggle="tab">爱朗文幼儿英文2级-1</a></li>
+				<li role="presentation"><a href="#course-2" aria-controls="profile" role="tab" data-toggle="tab">爱朗文幼儿英文2级-2</a></li>
+				<li role="presentation"><a href="#course-3" aria-controls="profile" role="tab" data-toggle="tab">爱朗文幼儿英文2级-3</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="course-1">
+					<div class="row">
+					<div class="col-lg-4" course_id="1">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-4">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button class_time">上课时间</button></a></div>
+							<div class="col-lg-4">
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a></div>
+							<div class="col-lg-4">
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4" course_id="2">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：2015.08.11-2015.11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button class_time">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4" course_id="3">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button class_time">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-lg-offset-9">
+						<a href="change_class-info.html"><button type="button" class="btn btn-success">添加班级</button></a>
+						<input type="button" class="btn btn-primary addCourse" value="导入班级EXCEL" size="30" onclick="filebtn.click()"/>
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  <li class="disabled"><a href="#fakelink">&laquo;</a></li>
+						  <li class="disabled"><a href="#fakelink">&lsaquo;</a></li>
+						  <li class="active"><a href="#fakelink">1</a></li>
+						  <li><a href="#fakelink">2</a></li>
+						  <li><a href="#fakelink">3</a></li>
+						  <li><a href="#fakelink">...</a></li>
+						  <li><a href="#fakelink">15</a></li>
+						  <li><a href="#fakelink">&rsaquo;</a></li>
+						  <li><a href="#fakelink">&raquo;</a></li>
+						</ul>
+					</div>
+				</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="course-2">
+					<div class="row">
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3>LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  <li class="disabled"><a href="#fakelink">&laquo;</a></li>
+						  <li class="disabled"><a href="#fakelink">&lsaquo;</a></li>
+						  <li class="active"><a href="#fakelink">1</a></li>
+						  <li><a href="#fakelink">2</a></li>
+						  <li><a href="#fakelink">3</a></li>
+						  <li><a href="#fakelink">...</a></li>
+						  <li><a href="#fakelink">15</a></li>
+						  <li><a href="#fakelink">&rsaquo;</a></li>
+						  <li><a href="#fakelink">&raquo;</a></li>
+						</ul>
+					</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="course-3">
+					<div class="row">
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3 course-id="1">LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3 course-id="2">LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					<div class="col-lg-4">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><button type="button" class="btn btn-danger delete">删除</button></div>
+							<div class="bg-success content">
+						<h3 course-id="3">LMKZ02WKD-MDJ1507</h3>
+						<p>当前教学结点：Talk to Beeno 2 unit 5</p><p>中教：郭卉Holly</p>
+						<p>班主任：Chris</p><p>上课地点：宝山校区教3楼302室</p>
+						<p>外教：Chris</p><p>班级人数：15人</p>
+						<p class="time">授课周期：08.11-11.1</p></div>
+						<div class="row"><div class="col-lg-12">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button">上课时间</button></a>
+							<a href="change_class-info.html"><button type="button" class="btn btn-danger class-button">班级信息</button></a>
+							<a data-toggle="modal" href="#stu-info"><button type="button" class="btn btn-warning class-btn">学生资料</button></a></div>
+						</div></div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  <li class="disabled"><a href="#fakelink">&laquo;</a></li>
+						  <li class="disabled"><a href="#fakelink">&lsaquo;</a></li>
+						  <li class="active"><a href="#fakelink">1</a></li>
+						  <li><a href="#fakelink">2</a></li>
+						  <li><a href="#fakelink">3</a></li>
+						  <li><a href="#fakelink">...</a></li>
+						  <li><a href="#fakelink">15</a></li>
+						  <li><a href="#fakelink">&rsaquo;</a></li>
+						  <li><a href="#fakelink">&raquo;</a></li>
+						</ul>
+					</div>
+					</div>
+				</div>
+			  </div>
+			</div>
+		</div>				
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+        <!-- END PAGE CONTENT -->
+		<div class="modal fade" id="class-time" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">上课时间</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">上课安排</th><th style="width:10%">开始时间</th><th style="width:10%">结束时间</th></tr>
+					</thead>
+					<tbody>
+					</tbody>
+				 </table>
+				</div> 
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default edit">编辑</button>
+				<button type="button" class="btn btn-default btn-close" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		<div class="modal fade" id="stu-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">学生信息</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">学生编号</th><th style="width:10%">学生姓名</th>
+					 <th style="width:10%">学生详情</th>
+					</thead>
+					<tbody>
+					 <tr><td>20150403231</td><td>夏天</td><td><a href="user.html">查看详情</a></td>
+					</tbody>
+				 </table>
+				</div> 
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>				
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');	
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;	
+					}		
+				});
+
+				$('.edit').click(function(){
+					if($(this).text()=="编辑") {
+						$(this).parent().prev().find('input').removeAttr('disabled');
+						$(this).parent().prev().find('input').focus();
+						$(this).text("完成");
+						$("#class-time input.setName").blur(function() {
+					 		$value = $(this).value;
+					 		$class_time_id = $(this).parents('tr').attr("class_time_id");
+					 		var time_start = $(this).parents('tr').find('input').eq(0).val();
+					 		var time_end = $(this).parents('tr').find('input').eq(1).val();
+					 		var s = time_start.split(" "); 
+					 		var e = time_end.split(" "); 
+					 		var s1 = s[0].split("-"); var s2 = s[1].split(":"); 
+					 		var $time_start = new Date(s1[0],s1[1]-1,s1[2],s2[0],s2[1],s2[2]);
+					 		$time_start = $time_start.getTime() / 1000;
+					 		var e1 = e[0].split("-"); var e2 = e[1].split(":"); 
+					 		var $time_end = new Date(e1[0],e1[1]-1,e1[2],e2[0],e2[1],e2[2]);
+					 		$time_end = $time_end.getTime() / 1000;
+					 		var jsonStr;
+							$.ajax(
+					        {
+					            type:'get',
+					            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/change_class_time',
+					            dataType : 'jsonp',
+					            jsonp:"jsoncallback",
+					            data : "class_time_id="+$class_time_id + "&time_start="+$time_start + "&time_end="+$time_end, 
+					            success  : function() {	
+					           	      				
+					            },
+					            error : function() {
+					                alert("fail");
+					            }
+					        })
+						});
+						}else {
+							$(this).parent().prev().find('input').attr('disabled','true');
+							$(this).text("编辑");
+						}
+					});
+				$('.btn-close').click(function() {
+					$(this).prev().text("编辑");
+				});
+				$('.delete').click(function() {
+					var conf = confirm("确定删除该班级及相关信息吗?");
+					if(conf==true) {
+						$(this).parent().parent().parent().remove();
+					}	
+				});
+
+				$(".class_time").click(function() {
+					var course_id = $(this).parents('.col-lg-4').attr('course_id');
+					$('#class-time .course_info tbody').empty();
+				$.ajax(
+		        {
+		            type:'get',
+		            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/class_time',
+		            dataType : 'jsonp',
+		            jsonp:"jsoncallback",
+		            data : "id="+course_id,
+		            success  : function(data) {
+		                console.log(data);
+		                for(var i = 0 ; i < data.length ; i++) {
+		                	/*$time_start = (new Date(parseInt(data[i].time_start))).toLocaleDateString();
+		                	$time_end =  (new Date(parseInt(data[i].time_end))).toLocaleDateString();
+		                	console.log($time_start);*/
+		                	$id = data[i].id;
+		                	$time_start = (new Date(parseInt(data[i].time_start)*1000)).Format("yyyy-MM-dd hh:mm:ee");
+		                	$time_end = (new Date(parseInt(data[i].time_end)*1000)).Format("yyyy-MM-dd hh:mm:ee");
+		                	/*$("#class-time .course_info").append("<tr><td>第"+(i+1)+"次</td><td>"+$time_start+"</td><td>"+$time_end+"</td></tr>");*/
+
+		                	$("#class-time .course_info").append("<tr class_time_id='"+$id+"'><td>第"+(i+1)+"次</td><td><input id=\"wdate\" onclick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})\" type=\"text\" disabled=\"true\" class=\"setName\"  value='"+$time_start+"'/></td><td><input id=\"wdate\" onclick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})\" type=\"text\" disabled=\"true\" class=\"setName\" value='"+$time_end+"'/></td></tr>");
+		                }		          						
+		            },
+		            error : function() {
+		                alert('fail');
+		            }
+		        }
+				)
+				});
+
+				
+				
+			});	
+			Date.prototype.Format = function (fmt) { 
+		    var o = {
+		        "M+": this.getMonth() + 1, //月份 
+		        "d+": this.getDate(), //日 
+		        "h+": this.getHours(), //小时 
+		        "m+": this.getMinutes(), //分 
+		        "e+": this.getSeconds(), //秒 
+		        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+		        "S": this.getMilliseconds() //毫秒 
+		    };
+		    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    for (var k in o)
+		    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		    return fmt;
+		}	
+
+		</script>
+	</body>
+</html>

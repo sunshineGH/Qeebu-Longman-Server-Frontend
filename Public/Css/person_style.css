@@ -1,0 +1,16 @@
+/*按钮出现小手鼠标*/
+.sub{cursor:pointer}
+.color_hover:hover{color:#7ED6F1;font-weight:bold;font-size:20px;}
+
+/*文件内容控制 居中*/
+.text_content{text-align:center;}
+
+/*自动换行*/
+.newline{word-break:break-all;}
+
+/*设置class为ul_box的样式*/
+.ul_box{padding:0;}
+.ul_box li{list-style:none;float:left;cursor:pointer}
+.ul_box li:nth-of-type(even){margin-left:10px;margin-right:10px;}
+
+

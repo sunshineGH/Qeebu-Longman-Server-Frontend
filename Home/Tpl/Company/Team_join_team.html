@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>{$data.user_name}邀请您加入Team{$data.team_name}</title>
+<link href="__PUBLIC__/Css/iniv_css/style.css" rel="stylesheet">
+</head>
+<body id="{$data.k}">
+    <div id="mask"></div>
+	<div id="searchTip">
+	<div class="pic"></div>
+	</div>
+<div class="container">
+  <div class="step1">
+    <form class="form-signin">
+        <center>
+        <h3 class="form-signin-heading1">{$data.user_name} <span>邀请您加入</span>
+            <h3 class="form-signin-heading2">【{$data.team_name}】</h3>
+        </h3>
+        <input class="ipt ipt-tel" id="username" type="text"  placeholder="邮箱或手机" />
+        <input class="ipt ipt-pwd" id="pwd" type="password"  placeholder="请输入密码" />
+        
+        <button class="btn logBtn" type="button" onClick="check_user()" >登<span>&nbsp&nbsp</span>录</button>		
+    	</center>
+    </form>
+    <!--<p class="searchPwd"><a href="#password_search">忘记密码？</a></p>-->
+  </div>
+ </div>
+  <footer class="step1">
+      <div class="container2">
+        <p>还没有账号？</p>
+        <p class="regBtn"><a type="button">注 册</a></p>
+      </div>
+  </footer> 
+
+<div class="container">
+    <div class="login2 step2" style="display:none">
+        <img src="__PUBLIC__/Css/iniv_images/agreeTop.png" alt="agreeTop.png" />
+        <p><center>您已加入【{$data.team_name}】</center></p>
+        <p><center>请前往TeamIn与伙伴们一起协作办公吧~</center></p>
+    </div>
+</div>
+    <footer class="step2 footer2" style="display:none">
+       <div class="download">
+        <p class="no_setup">还没安装TeamIn？</p>
+        <p>立即下载，开启移动协作体验之旅</p>
+        <button class="iosDownload" type="button"></button>
+        <button class="AndroidDownload" type="button"></button>
+
+       </div>
+    </footer>
+    
+<div class="container">
+    <div class="reg reg-first step3" style="display:none">
+        <img src="__PUBLIC__/Css/iniv_images/step1.png" alt="step1.png" />	
+        <center>
+            <input class="ipt ipt-reg-tel" name="tel" type="text" placeholder="请输入邮箱或手机号" />
+            <button class="btn nextBtn" type="button" onClick="get_verify('yes',3)">下一步</button>
+    	</center>
+    </div>
+    <div class="reg reg-second step4" style="display:none">
+        <img src="__PUBLIC__/Css/iniv_images/step2.png" alt="step2.png" />
+        <p><center>我们已将验证码发送至您的<span id="verify_type">邮箱</span>,请注意查收</center></p>	
+        <input class="validate" name="verify" type="text" placeholder="请输入验证码">
+        <label id="resend_verify">60s后重新获取</label>
+        <center>
+        	<button class="btn nextBtn" type="button" onClick="check_verify(4)">下一步</button>
+        </center>
+    </div>
+    <div class="reg reg-last step5" style="display:none">
+        <img src="__PUBLIC__/Css/iniv_images/step3.png" alt="step3.png" />	
+        <center>
+        <input class="ipt ipt-reg-name" type="text" id="reg_name"  placeholder="请输入真实姓名" />
+        <input class="ipt ipt-reg-pwd" type="password"	id="reg_pwd"  placeholder="请设置您的密码" />
+        <input class="ipt ipt-reg-pwd2" type="password" id="check_pwd"  placeholder="请确认您的密码" />
+        <button class="btn" type="button" onClick="register_audience()">完<span>&nbsp&nbsp</span>成</button>
+        </center>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script type="text/javascript" src="__PUBLIC__/Css/iniv_js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/alert.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.mobile-1.4.2.js?version=1.0"></script>
+<script type="text/javascript">
+var index=3;
+$(function() {
+    $(".regBtn").bind("click",function() {
+        $(".step1").hide();
+        $(".step3").show();
+    });
+	$(".iosDownload").bind("click",function(){
+		
+		var ua = navigator.userAgent.toLowerCase();
+		if(ua.match(/MicroMessenger/i)=="micromessenger") {
+			var $mask = $("#mask");
+			$mask.show();
+			$("#searchTip").show();
+			var $pic = $(".pic");
+			$pic.show();
+		} else {
+			window.location = '{$rs.app_downloadUrl}';
+		}
+	});
+	
+	$(".AndroidDownload").bind("click",function(){
+		window.location = '{$rs.android_url}';
+	});
+
+
+});
+</script>

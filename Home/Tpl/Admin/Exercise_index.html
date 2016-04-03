@@ -1,0 +1,108 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课后练习管理</a></li>
+				<li class="active">语法练习</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+				<div class="col-lg-12">
+					  <!-- Table -->
+					  <div class="table-responsive">
+					  <table class="course_info table table-bordered text-center">
+						<thead>
+						 <tr><th style="width:250px">套题名称</th><th style="width:100px">水平</th><th style="width:100px">习题数量</th><th>描述</th><th style="width:500px">操作</th></tr>
+					    </thead>
+					    <tbody>
+					    <foreach name="data" item="vo">
+						 <tr exercises_id="{$vo['id']}"><td>{$vo['name']}</td><td>{$vo['level']}</td><td>{$vo['question_num']}</td><td>{$vo['desc']}</td>
+						 <td>
+						 <a data-toggle="modal" href="{:U('Admin/Exercise/edit',array('id'=>$vo['id']))}"><button class="btn btn-primary has-margin">编辑套题信息</button></a>
+						 <button class="btn btn-success stu_num" data-toggle="modal" data-target="#change_grammar">修改习题</button>
+						 <a href="{:U('Admin/Question/create',array('id'=>$vo['id']))}"><button class="btn btn-success">增加习题</button></a>
+						 <a href="{:U('Admin/Exercise/destroy',array('id'=>$vo['id']))}"><button class="btn btn-danger delete">删除</button></a></td></tr>
+						 </foreach>
+					    </tbody>
+					 </table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-10">
+				<a href="{:U('Admin/Exercise/create')}"><button class="btn btn-primary" data-toggle="modal" data-target="#add_queSet">添加套题</button></a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-lg-offset-4">
+				<ul class="pagination">
+				  {$show}
+				</ul>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+		<foreach name="data" item="vo">
+			<div class="modal fade" id="change_grammar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">套题修改</h4>
+				  </div>
+				  <div class="modal-body">
+					<a href=""><button type="button" class="btn btn-danger btn-grammar btn-square">第1题</button></a>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</foreach>
+
+</block>
+<block name="main-js">
+	<script type="text/javascript">
+	$(function(){
+		$('.stu_num').click(function() {
+			var exercises_id = $(this).parents('tr').attr('exercises_id');
+			$('#change_grammar .modal-body').empty();
+			$.ajax(
+	        {
+	            type:'get',
+	            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_question',
+	            dataType : 'jsonp',
+	            jsonp:"jsoncallback",
+	            data : "id="+exercises_id,
+	            success  : function(data) {
+	                console.log(data.length);
+					for(var i = 0; i < data.length; i++) {
+						console.log(data[i].title);
+						$('#change_grammar .modal-body').append('<a href=""><button type="button" class="btn btn-danger btn-grammar btn-square"></button></a>');
+					}
+					for(var i=0;i<data.length;i++) {
+						$('#change_grammar .modal-body a').eq(i).attr('href','{:U('Admin/Question/show')}' + '/id/' + data[i].id);
+						$('.btn-grammar').eq(i).text(data[i].title);
+					}
+	            },
+	            error : function() {
+	                alert('fail');
+	            }
+	        }
+			)
+		});
+
+	})
+	</script>
+</block>

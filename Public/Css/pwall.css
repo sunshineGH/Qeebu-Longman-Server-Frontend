@@ -1,0 +1,64 @@
+.item {
+	width: 200px;
+	margin: 9px;
+	padding:10px;
+	float: left;
+	display:block;
+	-webkit-box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+		 -moz-box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+		-ms-box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+		 -o-box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+			box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+	-webkit-border-radius:5px;
+		 -moz-border-radius:5px;
+		-ms-border-radius:5px;
+		 -o-border-radius:5px;
+			border-radius:5px;
+}
+
+.item:hover{
+	-webkit-box-shadow:0 1px 15px rgba(34, 25, 25, 0.4);
+		 -moz-box-shadow:0 1px 15px rgba(34, 25, 25, 0.4);
+		-ms-box-shadow:0 1px 15px rgba(34, 25, 25, 0.4);
+		 -o-box-shadow:0 1px 15px rgba(34, 25, 25, 0.4);
+			box-shadow:0 1px 15px rgba(34, 25, 25, 0.4);			
+}
+
+.item img{
+	width: 200px;
+	height:auto;
+}
+
+#info{
+	width:50%;
+	margin:0 auto;
+	text-align:center;
+	font-family:"微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", Helvetica, Arial, FreeSans, sans-serif;
+	font-size:18px;
+	line-height:1.7em;
+}
+
+
+/**** Transitions ****/
+
+.masonry,
+.masonry .masonry-brick {
+	-webkit-transition-duration: 0.6s;
+		 -moz-transition-duration: 0.6s;
+			 -o-transition-duration: 0.6s;
+					transition-duration: 0.6s;
+}
+
+.masonry {
+	-webkit-transition-property: height, width;
+		 -moz-transition-property: height, width;
+			 -o-transition-property: height, width;
+					transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+	-webkit-transition-property: left, right, top;
+		 -moz-transition-property: left, right, top;
+			 -o-transition-property: left, right, top;
+					transition-property: left, right, top;
+}

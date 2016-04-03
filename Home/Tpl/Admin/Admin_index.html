@@ -1,0 +1,160 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="change_course-arrange main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程安排</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+			<div class="col-sm-4">
+				<div class="the-box">
+				<fieldset class="course-arrange">
+					<legend>课程安排</legend>
+					<foreach name="unit" item="vo">
+					<div class="row">
+					<div class="col-sm-11"><a href="{:U('Admin/Unit/index',array('support_id'=>$support_id,'unit_id'=>$vo['id'],'theme_id'=>0))}"><button type="button" class="btn btn-primary" onclick="editNode(this)">{$vo['name']}</button></a><label>添加时间</label></div></div>
+					</foreach>
+
+				</fieldset>
+			</div><!-- /.the-box -->
+			</div>
+			<div class="col-sm-4">
+				<div class="the-box">
+					<fieldset class="course-arrange">
+					<legend>主题列表</legend>
+					<foreach name="theme" item="vo">
+					<div class="row">
+					<div class="col-sm-11"><a href="{:U('Admin/Unit/index',array('support_id'=>$support_id,'unit_id'=>$unit_id,'theme_id'=>$vo['id']))}"><button type="button" class="btn btn-primary">{$vo['theme']}</button></a><a href=""><button type="button" class="btn btn-default delete">删除</button></a><label>添加时间</label></div></div>
+					</foreach>
+					<div class="row">
+					<div class="col-sm-2 col-sm-offset-8"><a href="{:U('Admin/Unit/create_theme',array('support_id'=>$support_id,'unit_id'=>$unit_id))}"><button type="button" class="btn btn-success add">增加</button></a></div>
+					</div>
+					</fieldset>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="the-box">
+					<fieldset class="course-arrange">
+					<legend>模块列表</legend>
+					<foreach name="module" item="vo">
+					<div class="row">
+					<div class="col-sm-11"><a href="#"><button type="button" class="btn btn-primary" onclick="editNode(this)">{$vo['module']}</button></a><a href=""><button type="button" class="btn btn-default delete">删除</button></a><label>添加时间</label></div></div>
+					</foreach>
+					<div class="row">
+					<div class="col-sm-2 col-sm-offset-8"><a href="{:U('Admin/Unit/create_module',array('support_id'=>$support_id,'unit_id'=>$unit_id,'theme_id'=>$theme_id))}"><button type="button" class="btn btn-success add">增加</button></a></div>
+					</div>
+					</fieldset>
+				</div>
+			</div>
+			</div><!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+		<div class="modal fade" id="themeEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">主题编辑</h4>
+			  </div>
+			  <div class="modal-body">
+			  <form id="ValidationForm" method="post" action="" class="form-horizontal">
+				<div class="form-group">
+					<label class="col-lg-3 control-label">名称</label>
+					<div class="col-lg-5 selectOption">
+						<input type="text" class="form-control" name="color" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">图片</label>
+					<div class="col-lg-5">
+						<input type="file"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">类型</label>
+						<div class="col-lg-5">
+							<select class="form-control">
+								<option value="">习题精选</option>
+								<option value="1">外教视频</option>
+							</select>
+						</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-4 col-lg-offset-4">
+						<button type="button" class="btn btn-success">确定</button>
+					</div>
+				</div>
+				</form>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="moduleEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">模块编辑</h4>
+			  </div>
+			  <div class="modal-body">
+			  <form id="ValidationForm" method="post" action="" class="form-horizontal">
+				<div class="form-group">
+					<label class="col-lg-3 control-label">名称</label>
+					<div class="col-lg-5 selectOption">
+						<input type="text" class="form-control" name="color" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">颜色</label>
+						<div class="col-lg-5">
+							<select class="form-control">
+								<option value="">白色</option>
+								<option value="1">黑色</option>
+							</select>
+						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">图片</label>
+					<div class="col-lg-5">
+						<input type="file"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">习题</label>
+						<div class="col-lg-5">
+							<select class="form-control">
+								<option value="">习题1</option>
+								<option value="1">习题2</option>
+							</select>
+						</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-4 col-lg-offset-4">
+						<button type="button" class="btn btn-success">确定</button>
+					</div>
+				</div>
+				</form>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+</block>

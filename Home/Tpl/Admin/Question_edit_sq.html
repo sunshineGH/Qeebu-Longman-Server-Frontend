@@ -1,0 +1,63 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">套题管理</a></li>
+				<li class="active">习题添加</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Question/update_sq')}" class="form-horizontal" enctype="multipart/form-data">
+
+				<fieldset class="displaykind">
+					<legend>习题内容</legend>
+					<div class="col-lg-9">
+					<div class="form-group">
+						<label class="col-lg-4 control-label">标题</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="title" value="{$data['title']}"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">问题</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="detail"  value="{$data['detail']}"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">上传图片及音频</label>
+						<div class="col-lg-5">
+							<input type="file" name="enclosure[]" multiple="true" required="required"/>(一张图片,一个音频,支持格式jpg,png,MP3,MP4)
+						</div>
+					</div>
+					</div>
+					<div class="col-lg-3">
+						<img src="__PUBLIC__/Images/logo-login1.jpg">
+					</div>
+				</fieldset>
+
+				<div class="form-group">
+					<div class="col-lg-3 col-lg-offset-4">
+						<input type="text" class="form-control" name="id" style="display:none" value="{$question_id}"/>
+						<input type="text" class="form-control" name="topic_id" style="display:none" value="{$data['topic_id']}"/>
+						<button type="submit" class="btn btn-primary submit">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+
+</block>
+

@@ -1,0 +1,61 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="user-information main">
+</block>
+<block name="main-con">
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li class="active">用户管理</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+					  <!-- Table -->
+					  <div class="table-responsive">
+					  <div class="row">
+						<div class="col-sm-6">
+							<div id="datatable_length" class="dataTables_length">
+								<label><select size="1" name="datatable-example_length" aria-controls="datatable-example"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>
+								每页显示的记录数</label>
+							</div>
+						</div>
+						<div class="col-sm-4 col-sm-offset-2">
+							<div class="dataTables_filter" id="datatable-example_filter"><label>姓名查找: <input type="text" aria-controls="datatable-example"></label></div>
+						</div>
+					  </div>
+					  <table class="user_info table table-bordered text-center course_info ">
+						<thead>
+						 <tr><th>用户</th><th>活动</th><th>状态</th>
+						</thead>
+					    <tbody>
+					    <foreach name="data" item="vo">
+						 <tr><td>{$vo['user_name']}</td><td>{$vo['active_name']}</td><td>{$vo['state']}</td>
+						 </tr>
+						 </foreach>
+					    </tbody>
+					 </table>
+
+					 <div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  {$show}
+						</ul>
+					</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+
+		  <!-- END CONTAINER FLUID -->
+        <!-- END PAGE CONTENT -->
+
+</block>

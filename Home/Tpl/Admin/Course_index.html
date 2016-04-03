@@ -1,0 +1,223 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="course_information main">
+</block>
+<block name="main-con">
+	<div class="container-fluid">
+		<h1 class="page-heading">
+			乐宁教育
+			<small>
+				智能教育管理系统
+			</small>
+		</h1>
+		<ol class="breadcrumb default square rsaquo sm">
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home">
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#course">
+					课程管理
+				</a>
+			</li>
+			<li class="active">
+				课程信息
+			</li>
+		</ol>
+		<div class="the-box">
+			<div class="row" style="margin-bottom: 6px;">
+				<div class="col-sm-9">
+					<div class="dataTables_filter" id="datatable-example_filter">
+						<label>
+							<form action="__URL__" method="get">
+								课程名称:
+								<input type="text" name="search" aria-controls="datatable-example">
+								<input type="submit" value="search" />
+							</form>
+						</label>
+					</div>
+				</div>
+				<div class="col-lg-3" style="text-align: right">
+					<a href="{:U('Admin/Course/create')}">
+						<button type="button" class="btn btn-info addCourse">
+							添加课程
+						</button>
+					</a>
+					<input type="button" class="btn btn-primary addCourse" value="导入课程EXCEL" size="30" onclick="filebtn.click()" />
+					<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1" />
+				</div>
+			</div>
+			<div class="row">
+				<?php  $i = 0; ?>
+				<foreach name="rs.data" item="vo">
+					<div class="col-lg-4" course_id = "{$vo['id']}">
+						<div class="the-box class-info">
+							<div class="{:color($i++)} content">
+								<h3>{$vo['name']}</h3>
+								<p>
+									班级编号：
+									<a data-toggle="modal" class="class-info-Btn detail-Btn" href="#class-info">
+										查看详情
+									</a>
+								</p>
+								<p>
+									教学目标：
+									<a data-toggle="modal" class="goal-info-Btn detail-Btn" href="#goal-info">
+										查看详情
+									</a>
+								</p>
+								<p>
+									配套课程：{$vo['support']}
+								</p>
+								<p>
+									当前上课人数：{$vo['num']}
+								</p>
+							</div>
+							<!-- <div class="row"><div class="col-lg-12">
+                            <a href="{:U('Admin/CourseDetail/index',array('courseid'=>$vo['id']))}"><button type="button" class="btn btn-primary btn-course1">课程安排</button></a>
+                            <a href="{:U('Admin/Course/edit',array('courseid'=>$vo['id']))}"><button type="button" class="btn btn-danger btn-course2">课程管理</button></a>
+                            <a href="{:U('Admin/Course/edit',array('courseid'=>$vo['id']))}"><button type="button" class="btn btn-danger btn-course2">编辑课程</button></a></div>
+                            </div> -->
+							<div class="row">
+								<div class="col-lg-4">
+									<a href="{:U('Admin/CourseDetail/index',array('courseid'=>$vo['id'],'times'=>1))}"
+									   data-toggle="modal">
+										<button class="btn btn-primary class-button" type="button">
+											课程安排
+										</button>
+									</a>
+								</div>
+								<div class="col-lg-4">
+									<a href="{:U('Admin/Class/index',array('courseid'=>$vo['id']))}">
+										<button class="btn btn-danger class-button" type="button">
+											管理班级
+										</button>
+									</a>
+								</div>
+								<div class="col-lg-4">
+									<a href="{:U('Admin/Course/edit',array('courseid'=>$vo['id']))}" data-toggle="modal">
+										<button class="btn btn-warning class-button stu-info" type="button">
+											编辑课程
+										</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</foreach>
+				<div class="col-lg-6 col-lg-offset-6">
+					<ul class="pagination">
+						{$rs.show}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="modal fade" id="goal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">教学目标</h4>
+					  </div>
+					  <div class="modal-body">
+						<p>教学目标教学目标教学目标教学目标</p>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					  </div>
+				</div>
+		  </div>
+	</div>
+		<div class="modal fade" id="class-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">爱朗文幼儿英语2级</h4>
+				<button class="btn btn-success">未结课</button>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">班级编号</th><th style="width:10%">中教</th><th style="width:10%">外教</th>
+					 <th style="width:10%">班主任</th>
+					 <th style="width:10%">上课地点</th><th style="width:10%">开课时间</th><th style="width:10%">结课时间</th>
+					</thead>
+					<tbody>
+					 <tr><td>LDADAHD313</td><td>郭卉Holly</td><td>Chris</td>
+					 <td>XXX</td><td>宝山校区</td>
+					 <td>8月1日</td><td>11月11日</td>
+					</tbody>
+				 </table>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+</block>
+<block name="main-js">
+	<script>
+		$(function() {
+			$('.class-info-Btn').click(function() {
+				var $class_id = $(this).parents('.col-lg-4').attr("course_id");
+				$('#class-info tbody').empty();
+				$course_title = $(this).parents('.col-lg-4 .content h3').innerHTML;
+				console.log($course_title);
+				$('#class-info modal-title').html($course_title);
+				$.ajax ({
+					type:'get',
+					url:'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_class',
+					dataType : 'jsonp',
+		            jsonp:"jsoncallback",
+		            data : "id="+$class_id,
+		            success  : function(data) {
+		                console.log(data);
+		                for(var i=0;i<data.length;i++) {
+		                	$class_num = data[i].class_num;
+		                	$zh_teacher = data[i].zh_teacher;
+		                	$en_teacher = data[i].en_teacher;
+		                	$hm_teacher = data[i].hm_teacher;
+		                	$school_address = data[i].school_address;
+		                	$time_begin = data[i].time_begin;
+		                	$time_end = data[i].time_end;
+		                	$('#class-info tbody').append("<tr><td>" + $class_num +"</td><td>" + $zh_teacher +"</td><td>" + $en_teacher + "</td><td>" + $hm_teacher +"</td><td>" +          $school_address + "</td><td>" + $time_begin + "</td><td>" + $time_end + "</td>");
+		                }
+		            },
+		            error : function() {
+		                alert('fail');
+		            }
+				})
+			});
+			$('.goal-info-Btn').click(function() {
+				var $class_id = $(this).parents('.col-lg-4').attr("course_id");
+				$('#goal-info p').empty();
+				$.ajax ( {
+					type:'get',
+					url:'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/show_course_desc',
+					dataType:'jsonp',
+					jsonp:"jsoncallback",
+					data : "id="+$class_id,
+					success:function(data) {
+						console.log(data);
+						$('#goal-info p').text(data.desc);
+					},
+					error : function() {
+		                alert('fail');
+		            }
+
+				})
+
+			});
+
+		});
+	</script>
+</block>

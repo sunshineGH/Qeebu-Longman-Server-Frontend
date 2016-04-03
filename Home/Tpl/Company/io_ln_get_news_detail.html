@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{$rs.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1.0, user-scalable=no">
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+    #fixedb,#fixedc,#fixedd{
+        width:50px;
+        height:50px;
+        position:fixed;/* 相对于屏幕定位 */
+        left:5px;/* 横向位置也可用left */
+        bottom:120px;/* 纵向位置也可用top */
+        opacity:0.4;/*解决透明*/
+    }
+    #fixed_a{
+        width:50px;
+        height:50px;
+        position:fixed;/* 相对于屏幕定位 */
+        right:50px;/* 横向位置也可用left */
+        bottom:120px;/* 纵向位置也可用top */
+
+    }
+    #fixedb img,#fixedc img,#fixedd img{
+        width: 100%;
+    }
+    p{text-indent:0;}
+</style>
+<body style="background-color:#f9fafe">
+<!-- Home -->
+<div data-role="page" id="news" style="background-color:#f9fafe">
+    <div data-role="content" style="margin-left:10px; margin-right:5px">
+        <div style="margin:0 5px 0px 5px;">
+            <h3 style="width:100%; font-size:20px; text-align:left; margin-bottom:6px; margin-top:6px; color:#42485e;"><!--news_title--></h3>
+            <div style="font-size:12px; text-align:center; width:100%;text-align:left;color:#9aa5c3; ">
+                <span style="margin-right:20px; line-height:35px;">来自&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onClick="window.location='http://mp.weixin.qq.com/s?__biz=MjM5OTU1MzY1Mg==&mid=200368295&idx=1&sn=a6dc0fbb1187d17d59271138315400a3#rd'">Longman School</a> </span></span>{$rs.time_insert}</div>
+            <div style="clear:both; margin-bottom:10px; text-align: center">
+                <img src="{$rs.file_path}" width="100%" />
+            </div>
+
+            <div style="color:#42485e; line-height: 24px;">
+                {$rs.content}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

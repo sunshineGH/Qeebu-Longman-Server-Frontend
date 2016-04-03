@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="course_information main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">学生信息</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item active selected"><a href="course_information.html">线下课程</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-bar-chart-o icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						班级教学
+					</a>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-book icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						教学资料
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="class-information.html">班级信息</a></li>
+						<li class="list-group-item"><a href="#">排课安排</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">听力练习</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程信息</li>
+			</ol>
+					<!-- End breadcrumb -->	
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="" class="form-horizontal">
+				<fieldset class="xianxia">
+					<legend>课程信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程名称</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="username" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程种类</label>
+						<div class="col-lg-1">
+							<!-- <select class="form-control course-kind" name="country">
+								<option value="xianxia">线下课程</option>
+								<option value="support">配套课程</option>
+							</select> -->
+							<label><input type="radio" name="courseradio" class="related-course"/>课程1</label></div>
+						<div class="col-lg-1">
+							<label><input type="radio" name="courseradio" class="related-course"/>课程2</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">口语水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="country">
+								<option value="">-- Select a level --</option>
+								<option value="level_1">level 1</option>
+								<option value="level_2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">语法水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="country">
+								<option value="">-- Select a level --</option>
+								<option value="level_1">level 1</option>
+								<option value="level_2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">综合水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="country">
+								<option value="">-- Select a level --</option>
+								<option value="level_1">level 1</option>
+								<option value="level_2">level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">配套课程</label>
+						<div class="col-lg-5 related-course">
+						<label class="label-course"></label>
+						<button type="button" data-toggle="modal" data-target="#choose_rel-course" class="btn btn-default choose_rel-courseBtn">选择课程</button>
+						<button type="button" class="btn btn-danger clear_rel-courseBtn">清空</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">教学目标</label>
+						<div class="col-lg-5">
+							<textarea rows="3" class="form-control" name="zipCode" /></textarea>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="support">
+					<legend>课程信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程名称</label>
+						<div class="col-lg-3">
+							<input type="text" class="form-control" name="color" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程种类</label>
+						<div class="col-lg-5">
+							<select class="form-control course-kind" name="country">								
+								<option value="support">配套课程</option>
+								<option value="xianxia">线下课程</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">简介</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="color" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">等级</label>
+						<div class="col-lg-5 selectOption">
+							<input type="text" class="form-control" name="zipCode" />								
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">习题编辑</label>
+						<div class="col-lg-5">
+							<button type="button" data-toggle="modal" data-target="#edit_supp-que" class="btn btn-default">编辑</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">第<span>1</span>次资源</label>
+						<div class="col-lg-5">
+							<input type="file" multiple/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">第<span>2</span>次资源</label>
+						<div class="col-lg-5">
+							<input type="file" multiple/>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		  <div class="modal fade" id="edit_supp-que" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">习题编辑</h4>
+			  </div>
+			  <div class="modal-body">
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第1题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第2题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第3题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第4题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第5题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第6题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第7题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第8题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第9题</button></a>
+				<a href="flash_card.html"><button type="button" class="btn btn-danger btn-square">第10题</button></a>
+			  </div> 
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="choose_rel-course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">选择关联课程</h4>
+			  </div>
+			  <div class="modal-body">
+				<label><input type="radio" name="courseradio" class="related-course"/>课程1</label>
+				<label><input type="radio" name="courseradio" class="related-course"/>课程2</label>
+				<label><input type="radio" name="courseradio" class="related-course"/>课程3</label>
+				<label><input type="radio" name="courseradio" class="related-course"/>课程4</label>
+				<label><input type="radio" name="courseradio" class="related-course"/>课程5</label>
+				<label><input type="radio" name="courseradio" class="related-course"/>课程6</label>	
+			  </div> 
+			  <div class="modal-footer">
+				<button type="submit" class="btn btn-default saveReCou" data-dismiss="modal">确定</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+        <!-- END PAGE CONTENT -->		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');	
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;	
+					}		
+				});
+				$('fieldset.xianxia .course-kind').change(function() {
+					var kind = $('.course-kind') .val();
+						$('fieldset.xianxia').css('display','none');
+						$('fieldset.support').css('display','block');
+						$('.course-kind').val('support');
+				});
+				$('fieldset.support .course-kind').change(function() {
+					var kind = $('.course-kind') .val();
+						$('fieldset.xianxia').css('display','block');
+						$('fieldset.support').css('display','none');
+						$('.course-kind').val('xianxia');
+				});
+				$('#choose_rel-course .saveReCou').click(function() {
+					$('#choose_rel-course .related-course').each(function(index) {
+						if($(this).is(':checked')) {
+							var $label = $(this).parent().text() + " ";
+							<!-- $('.choose_rel-courseBtn').before($label);  -->
+							$('.label-course').append($label);
+							$(this).attr('checked',false);
+						}
+					});
+					
+				});
+				$('.clear_rel-courseBtn').click(function() {
+					$('.label-course').html("");
+				});
+			});				
+		</script>
+	</body>
+</html>

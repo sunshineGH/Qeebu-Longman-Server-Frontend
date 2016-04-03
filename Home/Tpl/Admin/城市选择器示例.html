@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>城市选择器</title>
+</head>
+<body>
+	<select id="pro" name="">
+
+	</select>
+
+	<select id="city" name="">
+
+	</select>
+	<script type="text/javascript">
+	var p = [];
+	<foreach name="course" key="i" item="vo">
+		p[{$i}]['id'] = {$vo['id']};
+		p[{$i}]['name'] = {$vo['name']};
+	</foreach>
+	//定义市
+	var c = [];
+	// <foreach name="course" key="i" item="vo">
+	// 	p[{$vo['id']}] = {$vo['class']};
+	// </foreach>
+	//获取select
+
+	//获取select
+	var pro = document.getElementById('pro');
+	var city = document.getElementById('city');
+
+
+	function init(){
+		//省份初始化
+		for(var i=0;i<p.length;i++){
+			//创建option节点
+			var op = document.createElement('option');
+			//设置值
+			op.value = i;
+			//设置文本
+			op.innerHTML = p[i];
+			//将op插入省份中
+			pro.appendChild(op);
+		}
+	}
+	init();
+
+	//绑定change事件
+	pro.onchange = function(){
+		//清空市的列表
+		city.innerHTML = '';
+		//获取当前省份的值
+		var v = this.value;
+		//获取市的列表
+		var citys = c[v];
+		//创建option
+		for(var i=0;i<citys.length;i++){
+			var op = document.createElement('option');
+			op.value = i;
+			op.innerHTML = citys[i];
+			city.appendChild(op);
+		}
+	}
+
+
+	</script>
+</body>
+</html>

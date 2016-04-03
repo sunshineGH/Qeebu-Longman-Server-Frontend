@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>TeamIn</title><style>
+body{ 
+	text-align:center;
+} 
+@media screen{
+        .div{ 
+			margin:0 auto; 
+			width:100%; 
+			height:100%; 
+		} 
+	}
+</style> 
+
+</head> 
+<body id="{$data.k}"> 
+	<div class="div">
+		<div style="width:100%;height:20%;float:left;font-size:large;background-color:#F0FFFF;border-bottom:1px solid #ededed;padding-top:5%">
+			<strong>
+				<font color="#488C8B">{$data.user_name}    邀请您加入
+			<p>
+				【{$data.team_name}】
+			</p>
+			</font>
+			</strong>
+		</div>
+		<div style="width:100%;height:30%;float:left;padding-top:8%">
+			<img style="width:100%;" src="__PUBLIC__/Images/team/getTxt.png" alt="" />
+		</div>
+		<div style="float:left;width:90%;height:20%;">
+			<div style="float:left;padding-left:4%;">
+				<img style="width:40%;" src="__PUBLIC__/Images/team/input.png" alt="" />
+			</div>
+			<div style="float:left;">
+				<input type="text" style="border:0px;font-size:16px;line-height:16px" placeholder="请输入手机号" value="请输入手机号" name="tel" onclick="javascript: if(this.value=='请输入手机号'){this.value=''} " required/>
+			</div>
+			
+		</div>
+
+		<div style="width:85%;height:1px;border-top:1px solid #ededed;float:left;margin-left:8%"></div>
+
+		<div style="width:100%;height:4%;float:left;padding-top:10%;">
+			<img style="width:85%;" src="__PUBLIC__/Images/team/makesure.png" onclick="get_verify('yes')" />
+		</div>
+
+	</div> 
+</body> 
+</html> 
+<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/alert.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.mobile-1.4.2.js"></script>

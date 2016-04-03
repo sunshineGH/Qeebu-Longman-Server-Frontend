@@ -1,0 +1,434 @@
+CREATE TABLE `audience` (
+  `audience_id` int(11) NOT NULL AUTO_INCREMENT,
+  `audience_username` varchar(100) NOT NULL,
+  `audience_pwd` varchar(100) NOT NULL,
+  `audience_name` varchar(100) NOT NULL,
+  `audience_tel` varchar(20) NOT NULL,
+  `audience_email` varchar(50) NOT NULL,
+  `audience_department` tinyint(4) NOT NULL DEFAULT '1',
+  `audience_position` varchar(255) NOT NULL,
+  `audience_portrait` varchar(255) NOT NULL,
+  `audience_state` tinyint(1) NOT NULL,
+  `audience_nick` varchar(1) NOT NULL,
+  `audience_sex` tinyint(1) NOT NULL,
+  `audience_age` tinyint(3) NOT NULL,
+  `audience_qq` int(11) NOT NULL,
+  `audience_weixin` varchar(20) NOT NULL,
+  `audience_imUsername` varchar(255) NOT NULL,
+  `audience_imPassword` varchar(255) NOT NULL,
+  `leader_id` int(11) NOT NULL DEFAULT '1',
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL DEFAULT '0',
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`audience_id`),
+  UNIQUE KEY `audience_username` (`audience_username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `audience` (`audience_username`, `audience_pwd`, `audience_name`, `audience_tel`, `audience_email`, `audience_department`, `audience_position`, `audience_portrait`, `audience_state`, `audience_nick`, `audience_sex`, `audience_age`, `audience_qq`, `audience_weixin`, `audience_imUsername`, `audience_imPassword`, `leader_id`, `time_insert`, `time_update`, `time_delete`) VALUES
+('Default', '123', 'Default', '', '', 1, '', '', 1, 'd', 0, 0, 0, '', '', '', 1, 1418626398, 0, 0);
+
+
+CREATE TABLE `audience_department` (
+  `department_id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_name` varchar(50) NOT NULL,
+  `department_pid` int(11) NOT NULL DEFAULT '0',
+  `audience_num` int(11) NOT NULL,
+  `have_child` tinyint(1) NOT NULL DEFAULT '0',
+  `floor_id` int(11) NOT NULL,
+  `leader_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`department_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `audience_department` ( `department_name`, `department_pid`, `audience_num`, `have_child`, `floor_id`, `leader_id`, `time_insert`, `time_update`, `time_delete`) VALUES
+('Default', 0, 1, 1, 1, 1, 1415245563, 0, 0);
+
+
+CREATE TABLE `audience_department_rds` (
+  `rds_id` int(11) NOT NULL AUTO_INCREMENT,
+  `audience_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL DEFAULT '0',
+  `time_update` int(11) NOT NULL DEFAULT '0',
+  `time_delete` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`rds_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO  `teamin_103`.`audience_department_rds` (
+`rds_id` ,
+`audience_id` ,
+`department_id` ,
+`time_insert` ,
+`time_update` ,
+`time_delete`
+)
+VALUES (
+NULL ,  '1',  '1',  '1',  '0',  '0'
+);
+
+
+CREATE TABLE `department_personnel` (
+  `dpid` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `personnel_id` int(11) NOT NULL,
+  PRIMARY KEY (`dpid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `department_personnel` ( `department_id`, `personnel_id`) VALUES
+( 1, 4);
+
+
+
+
+CREATE TABLE `event` (
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_name` varchar(255) NOT NULL,
+  `event_description` text NOT NULL,
+  `event_start_time` int(11) NOT NULL,
+  `event_end_time` int(11) NOT NULL,
+  `event_launch_id` int(11) NOT NULL,
+  `event_execution_id` int(11) NOT NULL,
+  `event_examination_id` int(11) NOT NULL,
+  `event_acceptance_id` int(11) NOT NULL,
+  `event_current_audience` int(11) NOT NULL,
+  `event_current_date` date NOT NULL,
+  `event_current_state` int(11) NOT NULL,
+  `event_current_responds` text NOT NULL,
+  `event_image` varchar(20) NOT NULL,
+  `event_state` tinyint(4) NOT NULL,
+  `project_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`event_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+CREATE TABLE `event_log` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT,
+  `log_type` tinyint(1) NOT NULL,
+  `audience_id` int(11) NOT NULL,
+  `event_state` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `event_responds` text NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  `time_date` varchar(20) NOT NULL,
+  PRIMARY KEY (`log_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `event_notice` (
+  `notice_id` int(11) NOT NULL AUTO_INCREMENT,
+  `audience_id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `event_state` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`notice_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `leave` (
+  `leave_id` int(11) NOT NULL AUTO_INCREMENT,
+  `leave_uid` int(11) NOT NULL,
+  `leave_startTime` int(11) NOT NULL,
+  `leave_endTime` int(11) NOT NULL,
+  `leave_type` int(11) NOT NULL,
+  `leave_reason` text NOT NULL,
+  `leave_state` tinyint(1) NOT NULL,
+  PRIMARY KEY (`leave_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `leave_log` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `leave_state` int(11) NOT NULL,
+  `leave_id` int(11) NOT NULL,
+  `back_time` int(11) NOT NULL DEFAULT '0',
+  `leave_content` text NOT NULL,
+  `time_update` int(11) NOT NULL,
+  PRIMARY KEY (`log_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `leave_personnel_log` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT,
+  `personnel_id` int(11) NOT NULL,
+  `leave_state` int(11) NOT NULL,
+  `leave_id` int(11) NOT NULL,
+  `back_time` int(11) NOT NULL DEFAULT '0',
+  `leave_content` text NOT NULL,
+  `time_update` int(11) NOT NULL,
+  PRIMARY KEY (`log_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `leave_prove` (
+  `prove_id` int(11) NOT NULL AUTO_INCREMENT,
+  `leave_id` int(11) NOT NULL,
+  `prove_image_path` varchar(255) NOT NULL,
+  PRIMARY KEY (`prove_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `leave_type` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(50) NOT NULL,
+  `type_prove` tinyint(1) NOT NULL,
+  `type_image` varchar(255) NOT NULL,
+  `type_image_s` varchar(255) NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `leave_type` (`type_id`, `type_name`, `type_prove`, `type_image`, `type_image_s`) VALUES
+(1, '事假', 0, 'Public/Uploads/leave_type/100/545b4229a65d3.png', 'Public/Uploads/leave_type/100/m_545b4229a65d3.png'),
+(2, '病假', 1, 'Public/Uploads/leave_type/100/545b421ebe368.png', 'Public/Uploads/leave_type/100/m_545b421ebe368.png'),
+(3, '产假', 1, 'Public/Uploads/leave_type/100/545b420e9da9a.png', 'Public/Uploads/leave_type/100/m_545b420e9da9a.png'),
+(4, '年假', 0, 'Public/Uploads/leave_type/100/545b4204a6ecb.png', 'Public/Uploads/leave_type/100/m_545b4204a6ecb.png'),
+(5, '婚假', 1, 'Public/Uploads/leave_type/100/545b41f941d15.png', 'Public/Uploads/leave_type/100/m_545b41f941d15.png'),
+(6, '丧假', 0, 'Public/Uploads/leave_type/100/545b386f1878c.png', 'Public/Uploads/leave_type/100/m_545b386f1878c.png'),
+(7, '护理假', 1, 'Public/Uploads/leave_type/100/548819c592379.png', 'Public/Uploads/leave_type/100/m_548819c592379.png');
+
+
+
+CREATE TABLE `meeting` (
+  `meeting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `meeting_title` varchar(255) NOT NULL,
+  `meeting_sponsorsId` int(11) NOT NULL,
+  `meeting_description` text NOT NULL,
+  `meeting_startTime` int(11) NOT NULL,
+  `meeting_endTime` int(11) NOT NULL,
+  `meeting_local` varchar(255) NOT NULL,
+  `meeting_local_type` tinyint(1) NOT NULL DEFAULT '0',
+  `meeting_room_id` int(11) NOT NULL,
+  `meeting_state` tinyint(1) NOT NULL DEFAULT '1',
+  `meeting_type` tinyint(1) NOT NULL DEFAULT '0',
+  `meeting_date` date NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`meeting_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `meeting_join` (
+  `join_id` int(11) NOT NULL AUTO_INCREMENT,
+  `meeting_id` int(11) NOT NULL,
+  `audience_id` int(11) NOT NULL,
+  `join_state` tinyint(1) NOT NULL,
+  `join_content` text NOT NULL,
+  PRIMARY KEY (`join_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+CREATE TABLE `meeting_room` (
+  `room_id` int(11) NOT NULL AUTO_INCREMENT,
+
+  `floor_id` int(11) NOT NULL,
+  `room_name` varchar(100) NOT NULL,
+  `room_allSeats` int(11) NOT NULL,
+  `room_haveWifi` tinyint(1) NOT NULL DEFAULT '0',
+  `room_haveProjector` tinyint(1) NOT NULL DEFAULT '0',
+  `room_description` text NOT NULL,
+  PRIMARY KEY (`room_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `meeting_room` (`room_id`, `floor_id`, `room_name`, `room_allSeats`, `room_haveWifi`, `room_haveProjector`, `room_description`) VALUES
+(1, 1, 'Default Meeting Room', 10, 0, 0, '');
+
+
+CREATE TABLE `meeting_roombuilding` (
+  `building_id` int(11) NOT NULL AUTO_INCREMENT,
+  `local_id` int(11) NOT NULL,
+  `building_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`building_id`,`local_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `meeting_roombuilding` (`building_id`, `local_id`, `building_name`) VALUES
+(1, 1, 'Default Building');
+
+
+CREATE TABLE `meeting_roomfloor` (
+  `floor_id` int(11) NOT NULL AUTO_INCREMENT,
+  `building_id` int(11) NOT NULL,
+  `floor_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`floor_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `meeting_roomfloor` (`floor_id`, `building_id`, `floor_name`) VALUES
+(1, 1, 'Default Floor');
+
+
+
+CREATE TABLE `meeting_roomlocal` (
+  `local_id` int(11) NOT NULL AUTO_INCREMENT,
+  `local_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`local_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `meeting_roomlocal` (`local_id`, `local_name`) VALUES
+(1, 'Default Local');
+
+
+CREATE TABLE `meeting_roomschedule` (
+  `schedule_id` int(11) NOT NULL AUTO_INCREMENT,
+  `room_id` int(11) NOT NULL,
+  `schedule_date` date NOT NULL,
+  `schedule_maxstep` tinyint(2) NOT NULL,
+  `schedule_0` tinyint(1) NOT NULL,
+  `schedule_1` tinyint(1) NOT NULL,
+  `schedule_2` tinyint(1) NOT NULL,
+  `schedule_3` tinyint(1) NOT NULL,
+  `schedule_4` tinyint(1) NOT NULL,
+  `schedule_5` tinyint(1) NOT NULL,
+  `schedule_6` tinyint(1) NOT NULL,
+  `schedule_7` tinyint(1) NOT NULL,
+  `schedule_8` tinyint(1) NOT NULL,
+  `schedule_9` tinyint(1) NOT NULL,
+  `schedule_10` tinyint(1) NOT NULL,
+  `schedule_11` tinyint(1) NOT NULL,
+  `schedule_12` tinyint(1) NOT NULL,
+  `schedule_13` tinyint(1) NOT NULL,
+  `schedule_14` tinyint(1) NOT NULL,
+  `schedule_15` tinyint(1) NOT NULL,
+  `schedule_16` tinyint(1) NOT NULL,
+  `schedule_17` tinyint(1) NOT NULL,
+  `schedule_18` tinyint(1) NOT NULL,
+  `schedule_19` tinyint(1) NOT NULL,
+  `schedule_20` tinyint(1) NOT NULL,
+  `schedule_21` tinyint(1) NOT NULL,
+  `schedule_22` tinyint(1) NOT NULL,
+  `schedule_23` tinyint(1) NOT NULL,
+  `schedule_24` tinyint(1) NOT NULL,
+  PRIMARY KEY (`schedule_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `project` (
+  `project_id` int(11) NOT NULL AUTO_INCREMENT,
+  `project_name` varchar(255) NOT NULL,
+  `project_description` text NOT NULL,
+  `project_startTime` int(11) NOT NULL,
+  `project_endTime` int(11) NOT NULL,
+  `project_leader` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`project_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `project` (`project_id`, `project_name`, `project_description`, `project_startTime`, `project_endTime`, `project_leader`, `time_insert`, `time_update`, `time_delete`) VALUES
+(1, 'Default Project', 'Default Project', 1409205206, 1409205206, 1, 1409205206, 1416492755, 0);
+
+
+
+CREATE TABLE `push` (
+  `push_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` tinyint(4) NOT NULL,
+  `log_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  PRIMARY KEY (`push_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `news` (
+  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_title` varchar(100) NOT NULL,
+  `news_image` varchar(255) NOT NULL,
+  `news_image_s` varchar(255) NOT NULL,
+  `news_url` varchar(255) NOT NULL,
+  `news_author` varchar(100) NOT NULL,
+  `news_intro` varchar(100) NOT NULL,
+  `news_content` text NOT NULL,
+  `news_time` int(11) NOT NULL,
+  `news_mark` tinyint(1) NOT NULL,
+  `news_sort` int(11) NOT NULL,
+  `news_display` tinyint(4) NOT NULL,
+  `news_readNum` int(11) NOT NULL,
+  `news_category` tinyint(4) NOT NULL DEFAULT '1',
+  `news_channel` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`news_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `news_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `content` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `news_votes` (
+  `votes_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  PRIMARY KEY (`votes_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `news_channel` (
+  `channel_id` int(11) NOT NULL AUTO_INCREMENT,
+  `channel_name` varchar(100) NOT NULL,
+  `channel_sort` int(11) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  `time_update` int(11) NOT NULL,
+  `time_delete` int(11) NOT NULL,
+  PRIMARY KEY (`channel_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+INSERT INTO `news_channel` (`channel_id`, `channel_name`, `channel_sort`, `time_insert`, `time_update`, `time_delete`) VALUES
+(1, '世界杯', 122, 1403248370, 1403248370, -1),
+(2, '业外', 3, 1403248578, 1403833322, -1),
+(3, '业内', 2, 1403249339, 1403833316, -1),
+(4, '外部新闻', 1, 1403249345, 1411437522, -1)
+(5, '内部新闻', 2, 1411437514, 1411437514, -1),
+(6, '上市信息', 3, 1411437539, 1411437539, -1),
+(7, '新同事', 4, 1411437553, 1411437553, -1);
+
+
+
+CREATE TABLE `question_theme` (
+  `theme_id` int(11) NOT NULL AUTO_INCREMENT,
+  `theme_title` varchar(255) NOT NULL,
+  `theme_intro` text NOT NULL,
+  `end_time` int(11) NOT NULL,
+  `sponsor_id` int(11) NOT NULL,
+  PRIMARY KEY (`theme_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `sqlite` (
+  `sqlite_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sqlite_category` tinyint(4) NOT NULL,
+  `sqlite_path` varchar(255) NOT NULL,
+  `time_insert` int(11) NOT NULL,
+  PRIMARY KEY (`sqlite_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `uri` (
+  `devicetoken` varchar(128) NOT NULL,
+  `app_for` varchar(100) NOT NULL,
+  `mobiletype` tinyint(1) NOT NULL DEFAULT '1',
+  `uid` int(11) NOT NULL DEFAULT '1',
+  `timestamp` int(11) NOT NULL,
+  `version` varchar(20) NOT NULL,
+  `last_open_time` int(11) NOT NULL,
+  `badge` int(11) NOT NULL,
+  PRIMARY KEY (`devicetoken`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

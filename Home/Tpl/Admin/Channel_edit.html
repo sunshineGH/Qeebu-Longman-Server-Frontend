@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li>用户管理</li>
+				<li class="active">用户编辑</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+					<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Channel/update')}" class="form-horizontal">
+				<fieldset class="xianxia">
+					<legend>资料频道修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">频道名称</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="name" value="{$data['name']}"/>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">频道属性</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="channel_for">
+								<option value="0" {$data['channel_for']==0?'selected':''}>资料</option>
+								<option value="1" {$data['channel_for']==1?'selected':''}>图书</option>
+							</select>
+						</div>
+					</div>
+
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-4 col-lg-offset-4">
+						<input type="text" class="form-control" name="role" value="2" style="display:none"/>
+						<input type="text" class="form-control" name="id" value="{$data['id']}" style="display:none"/>
+						<button type="submit" class="btn btn-primary">提交</button>
+						<a href="{:U('Admin/Channel/destroy',array('id'=>$data['id']))}" class="btn btn-danger">删除</a>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+
+		  <!-- END CONTAINER FLUID -->
+        <!-- END PAGE CONTENT -->
+</block>
+
+
+<block name="main-js">
+		<script>
+
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						return true;
+						} else {
+						return false;
+					}
+				});
+			});
+		</script>
+</block>

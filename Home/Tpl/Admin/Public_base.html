@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>乐宁教育后台</title>
+
+    <link href="__PUBLIC__/Css/backend/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/Css/backend/font-awesome.css" rel="stylesheet">
+    <link href="__PUBLIC__/Css/backend/style.css" rel="stylesheet">
+    <script src="http://cdn.qeebu.com/js/jquery.min.js"></script>
+    <script src="http://cdn.qeebu.com/js/bootstrap.min.js"></script>
+    <block name="head"></block>
+</head>
+<block name="body">
+
+</block>
+
+<!-- TopBar-->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="__PUBLIC__/Images/backend/logo_white.png"></a>
+        </div>
+    </div>
+</nav>
+<!-- End TopBar -->
+<!-- LeftBar -->
+<div class="sidebar-left">
+    <ul class="list-group sidebar-menu">
+        <li class="static left-profile-summary">
+            <div class="media">
+                <p class="pull-left">
+                    <img src="<?= $_SESSION['ln_user']['photo']=='' ? __PUBLIC__.'/Images/backend/avatar-1.jpg' : $_SESSION['ln_user']['photo']  ?>" class="avatar img-circle media-object" alt="Avatar">
+                </p>
+                <div class="media-body">
+                    <h4><?= $_SESSION['ln_user']['nickname'] ?> <br /><strong><?= $_SESSION['ln_user']['role']==1?'学生':'老师' ?></strong></h4>
+                    <a href="{:U('Admin/Login/login_out')}" style="width:100px"><button class="btn btn-danger btn-xs">Log out</button></a>
+                </div>
+            </div>
+        </li>
+        <li id="nav0" class="list-group-item">
+            <a href="{:U('Admin/Index/index')}">
+                <i class="fa fa-dashboard icon-sidebar"></i>
+                首页
+            </a>
+        </li>
+        <li id="nav1" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-desktop icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                用户管理
+            </a>
+            <ul id="nav1_1" class="list-group submenu" display="none">
+                <li id="nav1_1_2" class="list-group-item"><a href="{:U('Admin/User/index')}">学生管理</a></li>
+                <li id="nav1_1_3" class="list-group-item"><a href="{:U('Admin/Teacher/index')}">教师管理</a></li>
+            </ul>
+        </li>
+        <li id="nav2" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-flask icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                课程管理
+            </a>
+            <ul id="nav2_1" class="list-group submenu">
+                <li id="nav2_1_1" class="list-group-item"><a href="{:U('Admin/Course/index')}">线下课程</a></li>
+                <li id="nav2_1_2" class="list-group-item"><a href="{:U('Admin/Spcourse/index')}">配套课程</a></li>
+            </ul>
+        </li>
+        <li id="nav4" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-pinterest icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                教学资料
+            </a>
+            <ul id="nav4_1" class="list-group submenu">
+                <li id="nav4_1_1" class="list-group-item"><a href="{:U('Admin/Channel/index')}">频道管理</a></li>
+                <li id="nav4_1_2" class="list-group-item"><a href="{:U('Admin/Library/index')}">资料管理</a></li>
+            </ul>
+        </li>
+        <li id="nav4" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-book icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                图书馆
+            </a>
+            <ul id="nav7_1" class="list-group submenu">
+                <li id="nav7_1_1" class="list-group-item"><a href="{:U('Admin/BookCategory/index')}">图书类别</a></li>
+                <li id="nav7_1_2" class="list-group-item"><a href="{:U('Admin/Book/index')}">图书管理</a></li>
+            </ul>
+        </li>
+        <li id="nav5" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-folder icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                新闻活动</a>
+            <ul id="nav5_1" class="list-group submenu" display="none">
+                <li id="nav5_1_1" class="list-group-item"><a href="{:U('Admin/Active/index')}">活动管理</a></li>
+            </ul>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="#">
+                <i class="fa fa-table icon-sidebar"></i>
+                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+                课后习题</a>
+            <ul id="nav6_1" class="list-group submenu" display="none">
+                <li id="nav6_1_1" class="list-group-item"><a href="{:U('Admin/Exercise/index')}">练习题</a></li>
+            </ul>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="{:U('Admin/Satisfaction/index')}">
+                <i class="fa fa-table icon-sidebar"></i>
+                家长参与</a>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="{:U('Admin/School/index')}">
+                <i class="fa fa-table icon-sidebar"></i>
+                校区管理</a>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="{:U('Admin/School/index')}">
+                <i class="fa fa-table icon-sidebar"></i>
+                考勤管理</a>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="{:U('Admin/School/index')}">
+                <i class="fa fa-table icon-sidebar"></i>
+                教师信息统计</a>
+        </li>
+        <li id="nav6" class="list-group-item">
+            <a href="{:U('Admin/School/index')}">
+                <i class="fa fa-table icon-sidebar"></i>
+                推送管理</a>
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <block name="main-con"></block>
+</div>
+</body>
+</html>
+<script src="http://cdn.qeebu.com/js/jquery.min.js"></script>
+<block name="main-js"></block>
+<script src="http://cdn.qeebu.com/js/bootstrap.min.js"></script>
+<script>
+    $(function() {
+        $('.sidebar-left ul.list-group li a').click(function() {
+            "use strict";
+            $('.sidebar-left li').removeClass('active');
+            $(this).closest('li').addClass('active');
+            var checkElement = $(this).next();
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                $(this).closest('li').removeClass('active');
+                checkElement.slideUp('fast');
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                $('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+                checkElement.slideDown('fast');
+            }
+            if($(this).closest('li').find('ul').children().length == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        var href=document.location.href;
+        switch(true){
+            case href.indexOf("User")>0:
+                choose_nav(1,2);
+                break;
+            case href.indexOf("Teacher")>0:
+                choose_nav(1,3);
+                break;
+            case href.indexOf('Course')>0:
+                choose_nav(2,1);
+                break;
+            case href.indexOf('Spcourse')>0:
+                choose_nav(2,2);
+                break;
+            case href.indexOf('Unit')>0:
+                choose_nav(2,2);
+                break;
+            case href.indexOf('Theme')>0:
+                choose_nav(2,3);
+                break;
+            case href.indexOf('Module')>0:
+                choose_nav(2,4);
+                break;
+            case href.indexOf('Class')>0:
+                choose_nav(3,1);
+                break;
+            case href.indexOf('Channel')>0:
+                choose_nav(4,1);
+                break;
+
+            case href.indexOf('Library')>0:
+                choose_nav(4,2);
+                break;
+
+            case href.indexOf('Activeuser')>0:
+                choose_nav(5,2);
+                break;
+
+            case href.indexOf('Active')>0:
+                choose_nav(5,1);
+                break;
+
+            case href.indexOf('Exercise')>0:
+                choose_nav(6,1);
+                break;
+            case href.indexOf('BookCategory')>0:
+                choose_nav(7,1);
+                break;
+            case href.indexOf('Book')>0:
+            choose_nav(7,2);
+            break;
+            default:
+                $('#nav0').addClass("active");
+                break;
+        }
+        function choose_nav($a,$b){
+            $('#nav'+$a).addClass("active");
+            $('#nav'+$a+'_1').addClass('visible');
+            $('#nav'+$a+'_1_'+$b).addClass('selected');
+        }
+    });
+    $('.delete').click(function() {
+        var conf = confirm("确定删除该信息吗?");
+        if(conf==false) {
+            return false;
+        }
+    });
+</script>

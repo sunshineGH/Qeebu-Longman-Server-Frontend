@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Sentir, Responsive admin and dashboard UI kits template">
+		<meta name="keywords" content="admin,bootstrap,template,responsive admin,dashboard template,web apps template">
+		<meta name="author" content="">
+		<title>乐宁教育后台登录</title>
+		<link href="__PUBLIC__/Css/backend/bootstrap.min.css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/backend/font-awesome.css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/backend/style.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body class="login tooltips">
+		<div class="login-header text-center">
+			<img src="__PUBLIC__/Images/backend/logo-login.png" class="logo" alt="Logo">
+		</div>
+		<div class="login-wrapper">
+
+			<form  action="{:U('Admin/Login/check_login')}" method="POST">
+				<div class="form-group has-feedback lg left-feedback no-label">
+				  <input type="text" class="form-control no-border input-lg rounded" placeholder="Enter username" autofocus name="ln_admin_username">
+				  <span class="fa fa-user form-control-feedback"></span>
+				</div>
+				<div class="form-group has-feedback lg left-feedback no-label">
+				  <input type="password" class="form-control no-border input-lg rounded" placeholder="Enter password" name="ln_admin_password">
+				  <span class="fa fa-unlock-alt form-control-feedback"></span>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-warning btn-lg btn-perspective btn-block">LOGIN</button>
+				</div>
+			</form>
+		</div>
+		<script src="http://cdn.qeebu.com/js/jquery.min.js"></script>
+		<script src="http://cdn.qeebu.com/js/bootstrap.min.js"></script>
+	</body>
+</html>

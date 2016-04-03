@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="change_course-arrange main">
+	<!-- TopBar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#"><img src="images/logo_white.png"></a>
+			</div>
+		</nav>
+	<!-- End TopBar -->
+	<!-- LeftBar -->
+		<div class="sidebar-left">
+			<ul class="list-group sidebar-menu">
+				<li class="static left-profile-summary">
+					<div class="media">
+					  <p class="pull-left">
+						<img src="images/avatar-1.jpg" class="avatar img-circle media-object" alt="Avatar">
+					  </p>
+					  <div class="media-body">
+						<h4>司梦雨, <br /><strong>管理员权限</strong></h4>
+						<button class="btn btn-danger btn-xs">Log out</button>
+					  </div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<a href="index.html">
+						<i class="fa fa-dashboard icon-sidebar"></i>
+						软件统计
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-desktop icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						用户管理
+					</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="user.html">sidebar-left2-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left2-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item selected">
+					<a href="#">
+						<i class="fa fa-flask icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课程管理
+					</a>
+					<ul class="list-group submenu visible">
+						<li class="list-group-item active selected"><a href="course_information.html">课程信息</a></li>
+						<li class="list-group-item"><a href="#">班级教学</a></li>
+						<li class="list-group-item"><a href="support-course.html">配套课程</a></li>
+						<li class="list-group-item"><a href="#">教学资料</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						活动管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="activity.html">线下活动</a></li>
+						<li class="list-group-item"><a href="#">国际认证考试</a></li>
+						<li class="list-group-item"><a href="#">俱乐部活动</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-folder-open icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						图书馆</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="#">sidebar-left4-1</a></li>
+						<li class="list-group-item"><a href="#">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#">
+						<i class="fa fa-table icon-sidebar"></i>
+						<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+						课后练习管理</a>
+					<ul class="list-group submenu" display="none">
+						<li class="list-group-item"><a href="grammar.html">语法练习</a></li>
+						<li class="list-group-item"><a href="grammar.html">sidebar-left4-2</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--Begin Page Content -->
+		<div class="page-content">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程安排</li>
+			</ol>
+					<!-- End breadcrumb -->	
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+			<div class="col-sm-6">
+				<div class="the-box">
+				<form id="ValidationForm" method="post" action="" class="form-horizontal num-em">
+				<fieldset>
+					<legend>课程信息安排</legend>
+					<div class="form-group">
+						<label>第<span> 1 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 1 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 1 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 2 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 2 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 2 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 3 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 3 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 3 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 4 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 4 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 4 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 5 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 5 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 5 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 6 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 6 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 6 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 7 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 7 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 7 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label>第<span> 8 </span>次课程作业</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 8 </span>次课程教学节点</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+					<div class="form-group">
+						<label>第<span> 8 </span>次课程内容</label>
+						<input type="text" class="form-control" name="username" />
+					</div>
+				</fieldset>				
+			</form>
+			</div><!-- /.the-box -->
+			</div>
+			<div class="col-sm-6">
+				<div class="the-box">
+					<p>每个课程默认设置8次上课，可对上课次数进行修改，设置“编辑上课次数”及“完成修改”两个按钮。</p>
+					<input type="button" class="btn btn-danger change_course-num" value="编辑上课次数"/>
+					<button type="submit" class="btn btn-primary change_finish">完成修改</button>
+				</div>
+			</div>
+			</div><!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		</div>
+        <!-- END PAGE CONTENT -->		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('.sidebar-left ul.list-group li a').click(function() {
+					"use strict";
+					$('.sidebar-left li').removeClass('active');
+					$(this).closest('li').addClass('active');	
+					var checkElement = $(this).next();
+					if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+						$(this).closest('li').removeClass('active');
+						checkElement.slideUp('fast');
+					}
+					if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+						$('.sidebar-left ul.sidebar-menu ul:visible').slideUp('fast');
+						checkElement.slideDown('fast');
+					}
+					if($(this).closest('li').find('ul').children().length == 0) {
+						window.location.href="www.baidu.com"; 
+						} else {
+						return false;	
+					}		
+				});
+				$(".change_course-num").click(function() {
+				if($(this).val()=="编辑上课次数"){
+					$("#ValidationForm").children(':last-child').children(':first-child').after('<input type="button" class="btn btn-default delete" onclick="deleteNode(this)" value="删除"/>');
+					$(this).val("编辑次数完成");
+				}else {	
+					$('.delete').remove();
+					$(this).val("编辑上课次数");
+				} 
+				});
+				//alert($("#ValidationForm").children(':last-child').prev().children(':first-child').next().val());
+				/*if($("#ValidationForm").children(':last-child').prev().children(':first-child').next().val()=="删除"){
+				}else{					
+					$("#ValidationForm").children(':last-child').prev().children(':first-child').after('<input type="button" class="btn btn-default delete" onclick="deleteNode(this)" value="删除"/>');
+				}
+				});*/
+  			    $(".change_finish").click(function() {
+				if($('.change_course-num').val()!="编辑上课次数") {
+					alert("请先完成上课次数编辑");
+				}else {
+					alert("提交成功");
+					window.location.reload();
+				}
+				
+				}); 
+				
+			});	
+			function deleteNode(node){
+			if($('fieldset').length == 1){
+			
+				$("#submitButton").hide();
+			}
+				$(node).parent().remove();
+				$("#ValidationForm").children(':last-child').children(':first-child').after('<input type="button" class="btn btn-default delete" onclick="deleteNode(this)" value="删除"/>');
+			}
+		</script>
+	</body>
+</html>

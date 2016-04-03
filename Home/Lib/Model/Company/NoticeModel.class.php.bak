@@ -1,0 +1,63 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2015/1/20
+ * Time: 17:40
+ */
+class NoticeModel extends Model{
+
+    public function push_notice($data)
+    {
+        $data['timestamp'] = time();
+        $rs = M('notice','','DB_MEETING')->add($data);
+
+        //push init
+        $post_data['sound']          = $data['cid'].'-'.$data['uid'];
+        $post_data['push_key_words'] = 'home';
+        $post_data['message']        = "【".$data['notice_title']."】".$data['notice_detail'];
+        $post_data['message']        = mb_substr($post_data['message'],0,30);
+        $post_data['message']        = nl2br($post_data['message']);
+        $post_data['message']        = strip_tags( $post_data['message']);
+
+        $tokens = D('Uri')->get_devicetokens($post_data['push_key_words']);
+
+        foreach($tokens as $val){
+
+            if($val['mobiletype'] == 1){
+                $post_data['tokens'][] = array(
+                    'token' => $val['devicetoken'],
+                    'badge' => (int)$val['badge'] + 1
+                );
+                $arr['app_for'] = 'home';
+                $arr['uid']     = $val['uid'];
+                D('Push')->update_badge_number(((int)$val['badge'] + 1),$arr);
+            }
+        }
+        A('Company/Push')->push_more($post_data);
+
+
+        return $rs;
+    }
+
+
+    public function get_notice_list($data)
+    {
+        $data['page'] = $data['page']  == null? 1:$data['page'];
+        $data['count']= $data['count'] == null?10:$data['count'];
+
+        $sql = 'select * from notice';
+        $sql.= ' order by notice_id desc';
+        $sql.= ' limit '.($data['page']-1)*$data['count'].','.$data['count'];
+        return M('notice','','DB_MEETING')->query($sql);
+    }
+
+    public function get_red_point($data)
+    {
+        $sql = 'select notice_id from notice';
+        $sql.= ' where timestamp > '.$data['timestamp'];
+        $sql.= ' limit 1';
+        return M('notice','','DB_MEETING')->query($sql);
+    }
+
+}

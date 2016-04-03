@@ -1,0 +1,90 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="change_course-arrange main">
+</block>
+<block name="main-con">
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程安排</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+			<div class="col-sm-4">
+				<div class="the-box">
+				<fieldset class="course-arrange">
+					<legend>课程信息安排</legend>
+
+					<foreach name="detail" key="i" item="vo">
+						<div class="row">
+							<div class="col-sm-8" style="text-align: left; margin-bottom: 10px;float:left">
+								<table border="1" width="100%">
+									<tr>
+										<td width="80px">名称:</td>
+										<td>第<span>{$i+1}</span>次课程</td>
+									</tr>
+									<tr>
+										<td>插入时间:</td>
+										<td>{:print_time($vo['time_insert'])}</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="text-align: center"><a class="delete" href="{:U('Admin/CourseDetail/destroy',array('courseid'=>$courseid,'detailid'=>$vo['id']))}">删除</a></td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-3"  style="float:right;margin-top:15px">
+								<a href="{:U('Admin/CourseDetail/index',array('courseid'=>$courseid,'times'=>$i+1))}"><button type="button" class="btn btn-primary editNode">查看详情</button></a>
+							</div>
+						</div>
+						<!-- <div class="row">
+						<div class="col-sm-8"><a  class="btn btn-primary editNode" href="{:U('Admin/CourseDetail/index',array('courseid'=>$courseid,'times'=>$i+1))}">第<span>{$i+1}</span>次课程</a><a  class="btn btn-default delete" href="{:U('Admin/CourseDetail/destroy',array('courseid'=>$courseid,'detailid'=>$vo['id']))}">删除</a><span>插入时间:{:date('Y-m-d',$detail['time_insert'])}</span></div></div> -->
+					</foreach>
+
+					<div class="row">
+					<div class="col-sm-2 col-sm-offset-9"><a  class="btn btn-default add" href="{:U('Admin/CourseDetail/store',array('courseid'=>$courseid))}">增加</a></div>
+				</fieldset>
+			</div><!-- /.the-box -->
+			</div>
+			<div class="col-sm-8">
+				<form action="{:U('Admin/CourseDetail/update',array('courseid'=>$courseid,'detailid'=>$courseinfo['id']))}" method="POST">
+				<div class="the-box">
+					<fieldset class="detail-arrange">
+						<legend>第<span> {$times} </span>课程安排</legend>
+						<label>第<span> {$times} </span>次课程作业</label>
+						<div class="form-group">
+							<textarea name="course_homework" id="" cols="100" rows="5">{$courseinfo['course_homework']}</textarea>
+						</div>
+						<label>第<span> {$times} </span>次课程教学节点</label>
+						<div class="form-group">
+							<textarea name="course_schedule" id="" cols="100" rows="5">{$courseinfo['course_schedule']}</textarea>
+						</div>
+						<label>第<span> {$times} </span>次课程内容</label>
+						<div class="form-group">
+							<textarea name="course_detail" id="" cols="100" rows="5">{$courseinfo['course_detail']}</textarea>
+						</div>
+					</fieldset>
+					<div class="row">
+					<div class="col-sm-2 col-sm-offset-5"><button type="submit" class="btn btn-primary add">提交</button></div>
+					</div>
+				</div>
+				</form>
+			</div>
+			</div><!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>
+<block name="main-js">
+<script>
+
+	$('.course-arrange').find('.editNode').eq(<?= $_GET['times']?>-1).addClass('actived');
+</script>
+</block>

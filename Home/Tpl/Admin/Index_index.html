@@ -1,0 +1,77 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#fakelink">软件统计</a></li> -->
+				<li class="active">软件统计</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="the-box no-border bg-success tiles-information">
+						<div class="tiles-inner text-center">
+							<p>当前软件用户量</p>
+							<h1 class="bolded">{$software_num}</h1>
+						    <div class="progress no-rounded progress-xs">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							</div>
+							</div>
+							<p><small>Better than yesterday (7,5%)</small></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="the-box no-border bg-primary tiles-information">
+						<div class="tiles-inner text-center">
+							<p>iOS平台安装数量</p>
+							<h1 class="bolded">{$ios_num}</h1>
+							<div class="progress no-rounded progress-xs">
+							<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							</div>
+							</div>
+							<p><small>Better than yesterday (10,5%)</small></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="the-box no-border bg-danger tiles-information">
+						<div class="tiles-inner text-center">
+							<p>安卓平台安装数量</p>
+							<h1 class="bolded">{$android_num}</h1>
+							<div class="progress no-rounded progress-xs">
+							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							</div>
+							</div>
+							<p><small>LESS than yesterday (-7,5%)</small></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="the-box no-border bg-warning tiles-information">
+						<div class="tiles-inner text-center">
+							<p>教师人数</p>
+							<h1 class="bolded">{$teacher}</h1>
+							<div class="progress no-rounded progress-xs">
+							<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							</div>
+							</div>
+							<p><small>Better than yesterday (2,5%)</small></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>

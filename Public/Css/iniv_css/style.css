@@ -1,0 +1,235 @@
+body {
+  padding-top: 20px; 
+  padding-bottom: 40px;
+  font-family: SimHei, 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+.container {
+   margin: 20px auto 0 auto;
+   max-width: 330px;
+   position:relative;
+}
+
+.login2 {
+	margin:50px auto 0 auto;
+}
+
+a {
+  text-decoration:none;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin-heading1 {
+	margin:0 auto 2px auto ;
+}
+
+ .form-signin-heading2 {
+  margin:0 auto 40px auto ;
+}
+
+.form-signin-heading1 span{
+  font-size:15px;
+}
+
+/* .form-signin .form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+} */
+.ipt {
+  width:78%;
+  height:20px;
+  line-height:20px;
+  margin-bottom: 10px;
+  border-radius:0;
+  padding:9px 9px 9px 48px;
+  border-top-style:none;
+  border-left-style:none;
+  border-right-style:none;
+  border-bottom:1px solid rgb(226,228,240);
+  background-color:transparent;
+  outline:none;
+  font-size:16px;
+}
+.ipt-tel {
+  background:url(/teamin/Public/Css/iniv_images/input.png) no-repeat bottom left;
+  background-size:10% 80%;
+}
+.ipt-pwd {
+  margin-bottom: 20px;
+  background:url(/teamin/Public/Css/iniv_images/loginPassword@2x.png) no-repeat bottom left;
+   background-size:10% 80%;
+}
+.container p {
+	float:right;
+	padding:0 20px 0 0;
+	margin:0 auto 0 auto;
+}
+
+.btn,.logBtn {
+	width:98%;
+	margin-top:20px;
+	height:38px;
+	border-radius:5px;
+	background-color:#18c3c0;
+	color:white;
+	border:none;
+	font-size:16px;
+}
+
+.searchPwd a {
+	text-decoration:none;
+	font-size:14px;
+	color:#9aa1af;
+}
+
+.step1 {
+	margin-bottom:10%;
+}
+
+footer {
+	bottom:20px;
+    overflow:hiden;
+	margin: auto;
+	width: 99%;
+	text-align:center;
+}
+
+footer p {
+	max-width:330px;
+	margin:0 auto 10px auto;
+	font-size:14px; 
+	text-align:center;
+}
+
+.footer2 {
+    overflow:hiden;
+    margin-top: 100px;
+    width: 99%;
+    text-align:center;
+}
+
+.regBtn {
+    width:80px;
+	line-height:30px;
+	background-color:transparent;
+	border:1px solid #18c3c0;
+	border-radius:5px;
+	height:30px;
+	text-align:center;
+}
+
+.download .no_setup {
+	font-size:16px;
+}
+.regBtn a {
+	color:#18c3c0;
+}
+
+.container img {
+	width:100%;
+	background-color:transparent;
+}
+
+.ipt-reg-tel {
+  margin-bottom: 30px;
+  background:url(/teamin/Public/Css/iniv_images/input.png) no-repeat bottom left;
+  background-size:10% 80%;
+}
+
+.ipt-reg-name {
+  background:url(/teamin/Public/Css/iniv_images/loginName@2x.png) no-repeat bottom left;
+  background-size:10% 80%;
+}
+.ipt-reg-pwd {
+  background:url(/teamin/Public/Css/iniv_images/loginPassword@2x.png) no-repeat bottom left;
+  background-size:10% 80%;
+}
+
+.ipt-reg-pwd2 {
+  margin-bottom: 30px;
+  background:url(/teamin/Public/Css/iniv_images/loginPassword@2x.png) no-repeat bottom left;
+  background-size:10% 80%;
+}
+
+
+.reg img {
+	width:126px;
+	margin:0 auto 0 89px;
+	margin-bottom:50px;
+}
+
+.reg-last img {
+	width:150px;
+	margin:0 auto 0 89px;
+	margin-bottom:50px;
+}
+
+.reg-second input {
+	margin-bottom:30px;
+	height:30px;
+	width:40%;
+	margin-right:10px;
+	background-color:transparent;
+	font-size:16px;
+	margin-top:20px;
+	margin-left:3px;
+
+}
+.reg-second p {
+	float:left;
+}
+
+.step2 .download .iosDownload {
+	background:url(../images/iOS.png) no-repeat top left;
+	width:126px;
+	height:36px;
+	border-radius:3px;
+	border:none;
+	background-size:cover;
+}
+
+.step2 .download .AndroidDownload {
+	background:url(../images/Android.png) no-repeat top left;
+	width:126px;
+	height:36px;
+	border-radius:3px;
+	border:none;
+	background-size:cover;
+}
+
+#mask {
+	height:100%;
+	width:100%;
+	background-color:#000;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+}
+#searchTip {
+	width:980px;
+	position:relative;
+	left:50%;
+	margin-left:-490px;
+	display:none;
+}
+.pic {
+        position:absolute;
+	width:590px;
+	height:880px;
+	background:url(/teamin/Public/Css/iniv_images/warning_02.png) no-repeat;
+	top:-105px;
+	left:327px;
+	display:none;
+	z-index:1000;
+	background-size:60%;
+}

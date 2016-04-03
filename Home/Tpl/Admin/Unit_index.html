@@ -1,0 +1,140 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="change_course-arrange main">
+</block>
+<block name="main-con">
+	<div class="container-fluid">
+		<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+		<ol class="breadcrumb default square rsaquo sm">
+			<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+			<li><a href="#course">课程管理</a></li>
+			<li><a href="course_information.html">课程信息</a></li>
+			<li class="active">修改课程安排</li>
+		</ol>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="the-box">
+					<fieldset class="course-arrange">
+						<legend>课程安排</legend>
+						<foreach name="unit" item="vo">
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="{:U('Admin/Unit/index',array('support_id'=>$support_id,'unit_id'=>$vo['id'],'unit_theme_id'=>0))}" alt="{$vo['name']}">
+										<button type="button" class="btn btn-primary unitNode{$vo['id']}">{$vo['name']}</button>
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<a href="{:U('Admin/Unit/change_name',array('unit_id'=>$vo['id'],'support_id'=>$support_id))}">
+										<button type="button" class="btn btn-default delete">编辑名称</button>
+									</a>
+								</div>
+							</div>
+						</foreach>
+					</fieldset>
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<div class="the-box themeEdit">
+					<fieldset class="course-arrange">
+					<legend>主题列表</legend>
+					<foreach name="theme" item="vo">
+					<div class="row">
+						<div class="col-sm-8" style="text-align: left; margin-bottom: 10px;float:left">
+							<table border="1" width="100%">
+								<tr>
+									<td width="80px">主题:</td>
+									<td>{$vo['theme']}</td>
+								</tr>
+								<tr>
+									<td>类型:</td>
+									<td>{:theme_type($vo['theme_type'])}</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align: center"><a href="{:U('Admin/Unit/delete_theme',array('support_id'=>$support_id,'unit_id'=>$unit_id,'unit_theme_id'=>$vo['id']))}">删除</a></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-sm-3"  style="float:right;margin-top:15px">
+							<a href="{:U('Admin/Unit/index',array('support_id'=>$support_id,'unit_id'=>$unit_id,'unit_theme_id'=>$vo['id']))}"><button type="button" class="btn btn-primary themeNode{$vo['id']}">查看详情</button></a>
+							<!-- <a href="{:U('Admin/Unit/delete_theme',array('support_id'=>$support_id,'unit_id'=>$unit_id,'unit_theme_id'=>$vo['id']))}"><button type="button" class="btn btn-default delete">删除</button></a> -->
+						</div>
+					</div>
+					</foreach>
+					<div class="row">
+					<div class="col-sm-2 col-sm-offset-8">
+						<a href="{:U('Admin/Unit/create_theme',array('support_id'=>$support_id,'unit_id'=>$unit_id))}"><button type="button" class="btn btn-success add">增加</button></a>
+					</div>
+					</div>
+					</fieldset>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="the-box moduleEdit">
+					<fieldset class="course-arrange">
+					<legend>模块列表</legend>
+					<foreach name="module" item="vo">
+					<div class="row">
+						<div class="col-sm-11" style=" width: 100%;text-align: left; margin-bottom: 10px">
+							<table border="1" width="100%">
+								<tr>
+									<td width="80px">模块:</td>
+									<td>{$vo['module']}</td>
+								</tr>
+								<tr>
+									<td>当前选择:</td>
+									<td>{$vo['title']}</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align: center">
+										<a href="#">
+											编辑
+										</a>&nbsp;|&nbsp;
+										<a class="delete" href="{:U('Admin/Unit/delete_module',array('support_id'=>$support_id,'unit_id'=>$unit_id,'unit_module_id'=>$vo['id'],'unit_theme_id'=>$unit_theme_id))}">
+											删除
+										</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					</foreach>
+
+
+					<div class="row">
+						<div class="col-sm-2 col-sm-offset-8">
+							<a href="{:U('Admin/Unit/create_module',array('support_id'=>$support_id,'unit_id'=>$unit_id,'unit_theme_id'=>$unit_theme_id))}">
+								<button type="button" class="btn btn-success add">增加</button>
+							</a>
+						</div>
+					</div>
+					</fieldset>
+				</div>
+			</div>
+			</div>
+		  </div>
+		</div>
+
+</block>
+<block name="main-js">
+<literal>
+	<script>
+		if(<?= isset($_GET['unit_id']) ? $_GET['unit_id'] : 0 ?>) {
+			console.log('themeshow');
+			$('.themeEdit').show();
+		}else{
+			console.log('themehide');
+			$('.themeEdit').hide();
+		}
+
+		if(<?= isset($_GET['unit_theme_id']) ? $_GET['unit_theme_id'] : 0?>) {
+			console.log('moduleshow');
+			$('.moduleEdit').show();
+		}else{
+			console.log('modulehide');
+			$('.moduleEdit').hide();
+		}
+		$('.course-arrange').find('.unitNode<?= isset($_GET['unit_id']) ? $_GET['unit_id'] : ""?>').addClass('actived');
+		$('.course-arrange').find('.themeNode<?= isset($_GET['unit_theme_id']) ? $_GET['unit_theme_id'] : ""?>').addClass('actived');
+	</script>
+</literal>
+</block>

@@ -1,0 +1,60 @@
+<extend name="Public:base" />
+<block name="body">
+<body class="user-information main">
+</block>
+<block name="main-con">
+
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<!-- <li><a href="#course">课程管理</a></li> -->
+				<li class="active">用户管理</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+					  <!-- Table -->
+					  <div class="table-responsive">
+					  <div class="row">
+							<div class="col-sm-9">
+							</div>
+							<div class="col-lg-3" style="margin-bottom: 6px; text-align: right">
+								<a href="{:U('Admin/Classinfo/create',array('id'=>$class_id))}">
+									<button type="button" class="btn btn-success addUser">
+										添加学生
+									</button>
+								</a>
+							</div>
+					  </div>
+					  <table class="user_info table table-bordered text-center course_info ">
+						<thead>
+						 <tr><th width="300px">用户账号</th><th width="200px">姓名</th>
+						 <th width="300px">联系方式</th><th>描述</th><th>操作</th></tr>
+						</thead>
+					    <tbody>
+					    <foreach name="data" item="vo">
+						 <tr><td>{$vo['user_info']['username']}</td><td>{$vo['user_info']['nickname']}</td><td>{$vo['user_info']['tel']}</td><td>{$vo['user_info']['desc']}</td><td><a href="{:U('Admin/Classinfo/destroy',array('id'=>$vo['user_info']['uid'],'class_id'=>$class_id))}"><button class="btn btn-danger change_info delete">删除</button></a></td>
+						 </tr>
+						 </foreach>
+					    </tbody>
+					 </table>
+					 <div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  {$show}
+						</ul>
+					</div>
+					</div>
+
+				</div>
+			</div>
+			</div>
+
+			<!-- END SiTE INFORMATIONS -->
+
+</block>

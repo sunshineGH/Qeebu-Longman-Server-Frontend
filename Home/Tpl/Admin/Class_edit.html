@@ -1,0 +1,109 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main class-information">
+</block>
+<block name="main-con">
+
+
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">班级教学</a></li>
+				<li><a href="class-information.html">班级信息</a></li>
+				<li class="active">班级信息</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Class/update')}" class="form-horizontal">
+				<fieldset class="xianxia">
+					<legend>班级信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">班级编号</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="class_num" value="{$data['class_num']}"/>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">中教</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="zh_teacher">
+								<foreach name="zh_teacher" item="vo">
+									<option value="{$vo['uid']}" {$data['zh_teacher']==$vo['uid']?'selected':''}>{$vo['nickname']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">外教</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="en_teacher">
+								<foreach name="en_teacher" item="vo">
+									<option value="{$vo['uid']}" {$data['en_teacher']==$vo['uid']?'selected':''}>{$vo['nickname']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">班主任</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="hm_teacher">
+								<foreach name="hm_teacher" item="vo">
+									<option value="{$vo['uid']}" {$data['hm_teacher']==$vo['uid']?'selected':''}>{$vo['nickname']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">校区</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="school_address_id">
+								<foreach name="school" item="vo">
+									<option value="{$vo['id']}" {$data['school_address_id']==$vo['id']?'selected':''}>{$vo['name']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">班级座位数</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="max_num" value="{$data['max_num']}"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">开始时间</label>
+						<div class="col-lg-5">
+							<input id="wdate" onClick="WdatePicker()" type="text" class="form-control" name="time_begin" value="{:print_time($data['time_begin'])}"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">结束时间</label>
+						<div class="col-lg-5">
+							<input id="wdate" onClick="WdatePicker()" type="text" class="form-control" name="time_end" value="{:print_time($data['time_end'])}"/>
+						</div>
+					</div>
+
+				</fieldset>
+				<div class="form-group">
+					<div class="col-lg-2 col-lg-offset-5">
+						<input type="text" class="form-control" name="course_id" value="{$data['course_id']}" style="display:none"/>
+						<input type="text" style="display:none" name="id" value="{$data['id']}">
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+			</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+</block>
+<block name="main-js">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+</block>

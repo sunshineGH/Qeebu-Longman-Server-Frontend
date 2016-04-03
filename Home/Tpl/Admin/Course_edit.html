@@ -1,0 +1,114 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main">
+</block>
+<block name="main-con">
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">课程管理</a></li>
+				<li><a href="course_information.html">课程信息</a></li>
+				<li class="active">修改课程信息</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<form id="ValidationForm" method="post" action="{:U('Admin/Course/update')}" class="form-horizontal">
+					<legend>课程信息修改</legend>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">课程名称</label>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" name="name" value="{$course['name']}"/>
+						</div>
+					</div>
+
+
+
+						<input id="xianxia_name" type="radio" name="class" checked class="related-course" value='1' style="display:none"/>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">口语水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="speaker_level">
+								<option value="1" {$course['speaker_level']==1?'selected':''}>level 1</option>
+								<option value="2" {$course['speaker_level']==2?'selected':''}>level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">语法水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="grammar_level">
+								<option value="1" {$course['grammar_level']==1?'selected':''}>level 1</option>
+								<option value="2" {$course['grammar_level']==2?'selected':''}>level 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">综合水平</label>
+						<div class="col-lg-5">
+							<select class="form-control" name="level">
+								<option value="1" {$course['level']==1?'selected':''}>level 1</option>
+								<option value="2" {$course['level']==2?'selected':''}>level 2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">配套课程</label>
+						<div class="col-lg-5">
+							<input  type="text" name="old_support_id" value='{$course['supporting_course_id']}' style="display:none"/>
+							<select class="form-control" name="support_id">
+			  					<foreach name='data' item='vo'>
+								<option value="{$vo['id']}" {$course['supporting_course_id']==$vo['id']?'selected':''}>{$vo['name']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">教学目标</label>
+						<div class="col-lg-5">
+							<textarea rows="3" class="form-control" name="desc" />{$course['desc']}</textarea>
+						</div>
+					</div>
+
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<input  type="text" name="courseid" value='{$course['id']}' style="display:none"/>
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.the-box -->
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+
+</block>
+<block name="main-js">
+		<script>
+
+				$('#choose_rel-course .saveReCou').click(function() {
+					$('#choose_rel-course .related-course').each(function(index) {
+						if($(this).is(':checked')) {
+							var $label = $(this).parent().text() + " ";
+							var sid = $(this).parent().attr('supportid');
+							$('.label-course').html($label);
+							$('#support_id').attr('value',sid);
+							$(this).attr('checked',false);
+						}
+					});
+
+				});
+				$('.clear_rel-courseBtn').click(function() {
+					$('.label-course').html("");
+				});
+			});
+		</script>
+</block>

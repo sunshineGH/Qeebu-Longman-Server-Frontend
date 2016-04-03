@@ -1,0 +1,36 @@
+<extend name="Public:base" />
+<block name="body">
+    <body class="user-information main">
+</block>
+<block name="main-con">
+    <div class="container-fluid">
+        <h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+        <ol class="breadcrumb default square rsaquo sm">
+            <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+            <li class="active">报名用户</li>
+        </ol>
+        <div class="the-box">
+            <div class="table-responsive">
+                <table class="user_info table table-bordered text-center course_info ">
+                    <thead>
+                        <tr>
+                            <th>用户</th>
+                            <th>活动</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="data" item="vo">
+                        <tr><td>{$vo['user_name']}</td>
+                            <td>{$vo['active_name']}</td>
+                            <td>{$vo['state']}</td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</block>

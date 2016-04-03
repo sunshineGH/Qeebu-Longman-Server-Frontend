@@ -1,0 +1,1 @@
+<table border="1" style="border-collapse:collapse;"><tr><td>编号</td><td>用户名</td><td>昵称</td><td>原因</td></tr><tr><td>louyanchina</td><td>娄焱</td><td>用户名已存在</td></tr><tr><td>tonglaoshi4</td><td>*班级主管 佟歆</td><td>用户名已存在</td></tr><tr><td>qeebutest</td><td>qeebutest</td><td>用户名已存在</td></tr></table>

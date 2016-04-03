@@ -1,0 +1,206 @@
+<extend name="Public:base" />
+<block name="body">
+	<body class="main class-information">
+</block>
+<block name="main-con">
+
+
+		<!--Begin Page Content -->
+		  <!--Begin CONTAINER FLUID -->
+		  <div class="container-fluid">
+			<!-- Begin page heading -->
+			<h1 class="page-heading">乐宁教育 <small>智能教育管理系统</small></h1>
+			<!-- End page heading -->
+			<!-- Begin breadcrumb -->
+			<ol class="breadcrumb default square rsaquo sm">
+				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+				<li><a href="#course">班级教学</a></li>
+				<li class="active">班级信息</li>
+			</ol>
+					<!-- End breadcrumb -->
+			<!-- BEGIN SiTE INFORMATIONS -->
+			<div class="the-box">
+				<div class="row">
+					<div class="col-sm-8"><h3>班级信息</h3></div>
+					<div class="col-sm-4"><div class="dataTables_filter" id="datatable-example_filter">
+						<label>班级编号查找：<input type="text" aria-controls="course-1"></label>
+					</div></div>
+				</div>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+					<div class="row">
+					<foreach name="data" item="vo">
+					<div class="col-lg-4" course_id="{$vo['id']}">
+						<div class="the-box class-info">
+							<div class="col-lg-3 col-lg-offset-9"><a href="{:U('Admin/Class/destroy',array('id'=>$vo['id'],'course_id'=>$course_id))}"><button type="button" class="btn btn-danger delete">删除</button></a></div>
+							<div class="bg-success content">
+						<h3>{$vo['class_num']}</h3>
+						<p>中教：{$vo['zh_name']}</p>
+						<p>外教：{$vo['en_name']}</p>
+						<p>班主任：{$vo['hm_name']}</p>
+						<p>班级人数：{$vo['num']}人</p>
+						<p>开课时间：{:print_time($vo['time_begin'])}</p>
+						<p>结课时间：{:print_time($vo['time_end'])}</p>
+						</div>
+						<div class="row btn-row">
+							<div class="col-lg-3">
+							<a data-toggle="modal" href="#class-time"><button type="button" class="btn btn-primary class-button class_time">上课时间</button></a></div>
+							<div class="col-lg-3"><a href="{:U('Admin/Class/edit',array('id'=>$vo['id'],'course_id'=>$course_id))}"><button type="button" class="btn btn-danger class-button">班级信息</button></a></div>
+							<div class="col-lg-3"><a data-toggle="modal" href="{:U('Admin/Classinfo/index',array('id'=>$vo['id']))}"><button type="button" class="btn btn-warning class-button stu-info">学生资料</button></a></div>
+							<div class="col-lg-3"><a data-toggle="modal" href="{:U('Admin/Homework/index',array('id'=>$vo['id']))}"><button type="button" class="btn btn-warning class-button stu-info">拓展型作业</button></a></div>
+						</div>
+					</div></div>
+					</foreach>
+
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-lg-offset-9">
+						<a href="{:U('Admin/Class/create',array('course_id'=>$course_id))}"><button type="button" class="btn btn-success">添加班级</button></a>
+						<input type="button" class="btn btn-primary addCourse" value="导入班级EXCEL" size="30" onclick="filebtn.click()"/>
+						<input type="file" id="filebtn" name="filebtn" style="position:absolute; filter:alpha(opacity=0); opacity:0; width:30px; " size="1" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-lg-offset-4">
+						<ul class="pagination">
+						  {$show}
+						</ul>
+					</div>
+				</div>
+
+
+			  </div>
+			</div>
+		</div>
+			<!-- END SiTE INFORMATIONS -->
+		  </div>
+		  <!-- END CONTAINER FLUID -->
+		  <div class="modal fade" id="class-time" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">上课时间</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="table-responsive">
+				  <table class="course_info table table-bordered text-center">
+					<thead>
+					 <tr class="active"><th style="width:8%">上课安排</th><th style="width:10%">开始时间</th><th style="width:10%">结束时间</th></tr>
+					</thead>
+					<tbody>
+					</tbody>
+				 </table>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default edit">编辑</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+</block>
+<block name="main-js">
+		<script src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+
+				$('.edit').click(function(){
+					if($(this).text()=="编辑") {
+						$(this).parent().prev().find('input').removeAttr('disabled');
+						$(this).parent().prev().find('input').focus();
+						$(this).text("完成");
+						}else {
+							$(this).parent().prev().find('input').attr('disabled','true');
+														$tr = $(this).parent().prev().find('tr');
+							for(var i=1;i<$tr.length;i++) {
+								$class_time_id = $tr.eq(i).attr('class_time_id');
+								var time_start = $tr.eq(i).find('input').eq(0).val();
+					 			var time_end = $tr.eq(i).find('input').eq(1).val();
+					 		    var s = time_start.split(" ");
+					 			var e = time_end.split(" ");
+					 			var s1 = s[0].split("-"); var s2 = s[1].split(":");
+					 			var $time_start = new Date(s1[0],s1[1]-1,s1[2],s2[0],s2[1],s2[2]);
+					 			$time_start = $time_start.getTime() / 1000;
+					 			var e1 = e[0].split("-"); var e2 = e[1].split(":");
+					 			var $time_end = new Date(e1[0],e1[1]-1,e1[2],e2[0],e2[1],e2[2]);
+					 			$time_end = $time_end.getTime() / 1000;
+					 			var jsonStr;
+								$.ajax(
+					        	{
+					           		type:'get',
+						            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/change_class_time',
+						            dataType : 'jsonp',
+						            jsonp:"jsoncallback",
+						            data : "class_time_id="+$class_time_id + "&time_start="+$time_start + "&time_end="+$time_end,
+						            success  : function() {
+
+						            },
+						            error : function() {
+						                alert("fail");
+						            }
+					        	})
+							}
+							$(this).text("编辑");
+						}
+					});
+				$('.btn-close').click(function() {
+					$(this).prev().text("编辑");
+				});
+
+
+				$(".class_time").click(function() {
+					var course_id = $(this).parents('.col-lg-4').attr('course_id');
+					$('#class-time .course_info tbody').empty();
+				$.ajax(
+		        {
+		            type:'get',
+		            url : 'http://huiyi.qeebu.cn/longman/index.php/Admin/Ajax/class_time',
+		            dataType : 'jsonp',
+		            jsonp:"jsoncallback",
+		            data : "id="+course_id,
+		            success  : function(data) {
+		                console.log(data);
+		                for(var i = 0 ; i < data.length ; i++) {
+		                	/*$time_start = (new Date(parseInt(data[i].time_start))).toLocaleDateString();
+		                	$time_end =  (new Date(parseInt(data[i].time_end))).toLocaleDateString();
+		                	console.log($time_start);*/
+		                	$id = data[i].id;
+		                	$time_start = (new Date(parseInt(data[i].time_start)*1000)).Format("yyyy-MM-dd hh:mm:ee");
+		                	$time_end = (new Date(parseInt(data[i].time_end)*1000)).Format("yyyy-MM-dd hh:mm:ee");
+		                	/*$("#class-time .course_info").append("<tr><td>第"+(i+1)+"次</td><td>"+$time_start+"</td><td>"+$time_end+"</td></tr>");*/
+
+		                	$("#class-time .course_info").append("<tr class_time_id='"+$id+"'><td>第"+(i+1)+"次</td><td><input id=\"wdate\" onclick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})\" type=\"text\" disabled=\"true\" class=\"setName\"  value='"+$time_start+"'/></td><td><input id=\"wdate\" onclick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})\" type=\"text\" disabled=\"true\" class=\"setName\" value='"+$time_end+"'/></td></tr>");
+		                }
+		            },
+		            error : function() {
+		                alert('fail');
+		            }
+		        }
+				)
+				});
+
+
+
+			});
+			Date.prototype.Format = function (fmt) {
+		    var o = {
+		        "M+": this.getMonth() + 1, //月份
+		        "d+": this.getDate(), //日
+		        "h+": this.getHours(), //小时
+		        "m+": this.getMinutes(), //分
+		        "e+": this.getSeconds(), //秒
+		        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+		        "S": this.getMilliseconds() //毫秒
+		    };
+		    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    for (var k in o)
+		    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		    return fmt;
+		}
+
+		</script>
+</block>

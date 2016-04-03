@@ -1,0 +1,6 @@
+ .number{border:1px solid #f2f2f2;display:block;width:25px;text-align:center;float:left;}
+ .current{text-decoration:underline;background:#37BC9B;color:white;border-radius:5px;}
+ .save{cursor:pointer}
+ .delete{cursor:pointer}
+/* // tr:nth-of-type(odd){background:#3BAFDA} */
+/*  tr:nth-of-type(even){background:#37BC9B} */

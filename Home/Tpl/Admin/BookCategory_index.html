@@ -1,0 +1,86 @@
+<extend name="Public:base" />
+<block name="body">
+
+	<body class="user-information main">
+</block>
+<block name="main-con">
+	<div class="container-fluid">
+		<h1 class="page-heading">
+			乐宁教育
+			<small>
+				智能教育管理系统
+			</small>
+		</h1>
+		<ol class="breadcrumb default square rsaquo sm">
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home">
+					</i>
+				</a>
+			</li>
+			<li class="active">
+				图书类别管理
+			</li>
+		</ol>
+		<div class="the-box">
+			<div class="row" style="margin-bottom: 6px;">
+				<div class="col-sm-9">
+					<div class="dataTables_filter" id="datatable-example_filter">
+						<label>
+							<form action="__URL__" method="get">
+								类别名称:
+								<input type="text" name="search" aria-controls="datatable-example">
+								<input type="submit" value="search" />
+							</form>
+						</label>
+					</div>
+				</div>
+				<div class="col-lg-3" style="text-align: right">
+					<a href="{:U('Admin/BookCategory/create')}">
+						<button type="button" class="btn btn-success addUser">
+							添加图书类别
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="user_info table table-bordered text-center course_info ">
+					<thead>
+					<tr>
+						<th style="width: 60px">编号</th>
+						<th>图书类别名称</th>
+						<th style="width: 80px">排序</th>
+						<th style="width: 300px">操作</th>
+					</thead>
+					<tbody>
+					<foreach name="data" item="vo">
+						<tr>
+							<td>{$vo['id']}</td>
+							<td>{$vo['name']}</td>
+							<td>{$vo['category_sort']}</td>
+							<td>
+								<a data-toggle="modal" href="{:U('Admin/BookCategory/edit',array('id'=>$vo['id']))}">
+									<button class="btn btn-primary has-margin act_num">
+										编辑
+									</button>
+								</a>
+								<a href="{:U('Admin/BookCategory/destroy',array('id'=>$vo['id']))}">
+									<button class="btn btn-danger change_info delete">
+										删除
+									</button>
+								</a>
+							</td>
+						</tr>
+					</foreach>
+					</tbody>
+				</table>
+				<div class="col-lg-6 col-lg-offset-6">
+					<ul class="pagination">
+						{$rs.show}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</block>

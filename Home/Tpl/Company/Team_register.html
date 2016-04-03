@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>TeamIn</title><style>
+body{ 
+	text-align:center;
+} 
+@media screen{
+        .div{ 
+			margin:0 auto; 
+			width:100%; 
+			height:100%; 
+		} 
+	}
+</style> 
+
+</head> 
+<body id="{$data.k}"> 
+	<div class="div"> 
+
+		<div style="background-color:#C1F9FA;width:100%;height:20%;float:left;padding-top:10%;">
+			<img style="width:25%;" src="__PUBLIC__/Images/team/log_6.jpg" alt="" />
+			<img style="width:100%;" src="__PUBLIC__/Images/team/log_7.jpg" alt="" />
+		</div>
+		
+		<div style="float:left;padding-left:4%;padding-top:8%">
+			<img style="width:40%;" src="__PUBLIC__/Images/team/name.png" alt="" />
+		</div>
+		<div style="float:left;padding-top:10%">
+            <input type="hidden" name="tel" value="{$data.tel}" />
+			<input name="username" type="text" style="border:0px" placeholder="请输入您的用户名(必填)" required/>
+		</div>
+
+		<div style="width:85%;height:1px;border-top:1px solid #ededed;float:left;margin-left:8%" />
+		</div>
+		<div style="float:left;padding-left:4%;padding-top:8%">
+			<img style="width:40%;" src="__PUBLIC__/Images/team/password.png" alt="" />
+		</div>
+		<div style="float:left;padding-top:10%">
+			<input name="password" type="text" style="border:0px" placeholder="请设置您的密码(必填)" required/>
+		</div>
+		<div style="width:85%;height:1px;border-top:1px solid #ededed;float:left;margin-left:8%" /></div>
+		<div style="float:left;padding-left:4%;padding-top:8%">
+			<img style="width:40%;" src="__PUBLIC__/Images/team/password.png" alt="" />
+		</div>
+		<div style="float:left;padding-top:10%">
+			<input name="checkpassword" type="text" style="border:0px" placeholder="请确认您的密码(必填)" required/>
+		</div>
+		<div style="width:85%;height:1px;border-top:1px solid #ededed;float:left;margin-left:8%" /></div>
+		
+		<div style="width:90%;height:20%;float:left;border:0px;padding:10% 0 0 10%;text-align:left;">
+			<input type="checkbox" checked/><font color="#2AC7C6">同意</font><a href="#"><font color="red">服务条款</font></a>
+		</div>
+		<div style="width:100%;height:4%;border:0px;float:left;padding-top:10%;">
+			<img style="width:85%;" src="__PUBLIC__/Images/team/havedone.png" onclick="register_audience()" />
+		</div>
+	</div> 
+</body> 
+</html>  
+<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/alert.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.mobile-1.4.2.js"></script>
